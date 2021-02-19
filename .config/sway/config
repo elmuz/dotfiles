@@ -1,0 +1,327 @@
+# Default config for sway
+#
+# Copy this to ~/.config/sway/config and edit it to your liking.
+#
+# Read `man 5 sway` for a complete reference.
+
+### Variables
+#
+# Logo key. Use Mod1 for Alt.
+set $mod Mod4
+
+input * {
+    xkb_layout "wasd"
+    xkb_variant "altgr-intl-wasd"
+    # xkb_variant "altgr-intl"
+    #xkb_options compose:caps-altgr 
+    xkb_options shift:both_capslock,caps:super
+}
+
+font pango:DejaVu Sans Mono, Awesome 10
+
+# Your preferred terminal emulator
+set $term alacritty
+
+# Your preferred application launcher
+# Note: pass the final command to swaymsg so that the resulting window can be opened
+# on the original workspace that the command was run on.
+set $menu wofi --show run --location 0 --lines 8 -b
+
+### Output configuration
+#
+# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
+# output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+#
+# Example configuration:
+#
+#   output HDMI-A-1 resolution 1920x1080 position 1920,0
+#
+# You can get the names of your outputs by running: swaymsg -t get_outputs
+set $DP1 "Dell Inc. DELL S2721HS BJ7T223"
+set $DP2 "Dell Inc. DELL S2721HS JR1V123"
+output $DP2 resolution 1920x1080 position 1080,410 bg ~/Pictures/wallpaper_C.jpg fill
+output $DP1 resolution 1920x1080 position 0,0 transform 90 bg ~/Pictures/wallpaper_L.jpg fill
+output eDP-1 mode --custom 1368x768@60Hz position 3000,732 bg ~/Pictures/wallpaper_R.jpg fill
+
+### Idle configuration
+#
+# Example configuration:
+#
+# exec swayidle -w \
+#          timeout 300 'swaylock -f -c 000000' \
+#          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+#          before-sleep 'swaylock -f -c 000000'
+#
+# This will lock your screen after 300 seconds of inactivity, then turn off
+# your displays after another 300 seconds, and turn your screens back on when
+# resumed. It will also lock your screen before your computer goes to sleep.
+exec swayidle -w timeout 300 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"'
+
+### Input configuration
+#
+# Example configuration:
+#
+#   input "2:14:SynPS/2_Synaptics_TouchPad" {
+#       dwt enabled
+#       tap enabled
+#       natural_scroll enabled
+#       middle_emulation enabled
+#   }
+#
+# You can get the names of your inputs by running: swaymsg -t get_inputs
+# Read `man 5 sway-input` for more information about this section.
+
+### Options
+focus_follows_mouse no
+mouse_warping none
+
+
+
+### Key bindings
+#
+# Basics:
+#
+    # Start a terminal
+    bindsym $mod+Return exec $term
+
+    # Kill focused window
+    bindsym $mod+Shift+q kill
+
+    # Start your launcher
+    bindsym $mod+space exec $menu
+
+    # Drag floating windows by holding down $mod and left mouse button.
+    # Resize them with right mouse button + $mod.
+    # Despite the name, also works for non-floating windows.
+    # Change normal to inverse to use left mouse button for resizing and right
+    # mouse button for dragging.
+    floating_modifier $mod normal
+
+    # Reload the configuration file
+    bindsym $mod+Shift+c reload
+
+    # Exit sway (logs you out of your Wayland session)
+    bindsym $mod+Shift+k exec swaymsg exit
+
+# Moving around:
+#
+    # Use $mod+[up|down|left|right]
+    bindsym $mod+Left focus left
+    bindsym $mod+Down focus down
+    bindsym $mod+Up focus up
+    bindsym $mod+Right focus right
+
+    # Move the focused window with the same, but add Shift
+    bindsym $mod+Shift+Left move left
+    bindsym $mod+Shift+Down move down
+    bindsym $mod+Shift+Up move up
+    bindsym $mod+Shift+Right move right
+#
+# Workspaces:
+#
+# Workspace vars
+set $wp1 ""
+set $wp2 ""
+set $wp3 ""
+set $wp5 ""
+set $wp8 ""
+set $wp9 ""
+
+workspace $wp1 output $DP2
+workspace $wp2 output $DP1
+workspace $wp3 output $DP2
+workspace $wp8 output eDP-1
+
+# Windows titlebars and borders
+default_border pixel 0
+
+# Gaps
+gaps inner 5
+
+# Switch to workspace
+bindsym $mod+1 workspace $wp1
+bindsym $mod+2 workspace $wp2
+bindsym $mod+3 workspace $wp3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace $wp5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace $wp8
+bindsym $mod+9 workspace $wp9
+bindsym $mod+0 workspace 10
+
+# Move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $wp1
+bindsym $mod+Shift+2 move container to workspace $wp2
+bindsym $mod+Shift+3 move container to workspace $wp3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace $wp5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace $wp8
+bindsym $mod+Shift+9 move container to workspace $wp9
+bindsym $mod+Shift+0 move container to workspace 10
+
+#
+# Layout stuff:
+#
+    # You can "split" the current object of your focus with
+    # $mod+b or $mod+v, for horizontal and vertical splits
+    # respectively.
+    bindsym $mod+h split h
+    bindsym $mod+v split v
+
+    # Switch the current container between different layout styles
+    bindsym $mod+q layout stacking
+    bindsym $mod+w layout tabbed
+    bindsym $mod+e layout toggle split
+
+    # Make the current focus fullscreen
+    bindsym $mod+f fullscreen
+
+    # Toggle the current focus between tiling and floating mode
+    #bindsym $mod+Shift+space floating toggle
+
+    # Swap focus between the tiling area and the floating area
+    #bindsym $mod+space focus mode_toggle
+
+    # Move focus to the parent container
+    # bindsym $mod+a focus parent
+#
+# Scratchpad:
+#
+    # Sway has a "scratchpad", which is a bag of holding for windows.
+    # You can send windows there and get them back later.
+
+    # Move the currently focused window to the scratchpad
+    bindsym $mod+Shift+s move scratchpad
+
+    # Show the next scratchpad window or hide the focused scratchpad window.
+    # If there are multiple scratchpad windows, this command cycles through them.
+    bindsym $mod+s scratchpad show
+#
+# Resizing containers:
+#
+mode "resize" {
+    # left will shrink the containers width
+    # right will grow the containers width
+    # up will shrink the containers height
+    # down will grow the containers height
+    bindsym Left resize shrink width 10 px or 10 ppt
+    bindsym Down resize grow height 10 px or 10 ppt
+    bindsym Up resize shrink height 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
+
+
+    # Return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+# Assign applications to specific workspaces
+assign [app_id="firefox"] → $wp1
+assign [class="jetbrains-pycharm"] → $wp3
+assign [class="Gimp"] → $wp5
+assign [class="Slack"] → $wp8
+assign [app_id="zoom"] → $wp9
+
+#
+# Status Bar:
+#
+# Read `man 5 sway-bar` for more information about this section.
+set $bg-color 	         #00000000
+set $inactive-bg-color   #00000000
+set $text-color          #f3f4f5
+# set $inactive-text-color #676E7D
+set $inactive-text-color #00000010
+set $urgent-bg-color     #E53935
+
+# window colors
+#                       border              background         text                  indicator
+# client.focused          $bg-color           $bg-color          $text-color           $bg-color
+# client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color  $bg-color
+# client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color  $bg-color
+# client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color           $bg-color
+
+# bar
+bar {
+	id 1
+	position bottom
+	output $DP1
+  	status_command -
+	colors {
+		background $bg-color
+	    	separator #75757500
+		#                  border             background         text
+		focused_workspace  $bg-color          $bg-color          $text-color
+		active_workspace   $bg-color          $bg-color          $text-color
+		inactive_workspace $bg-color          $bg-color          $text-color
+		urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
+	}
+	font pango:Source Code Variable 11
+	strip_workspace_numbers yes
+	gaps 0 5 5 5
+	separator_symbol "  "
+}
+bar {
+	id 2
+	position bottom
+	output $DP2
+  	status_command i3status --config ~/.config/i3status/config
+	colors {
+		background $bg-color
+	    	separator #75757500
+		#                  border             background         text
+		focused_workspace  $bg-color          $bg-color          $text-color
+		active_workspace   $bg-color          $bg-color          $text-color
+		inactive_workspace $bg-color          $bg-color          $text-color
+		urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
+	}
+	font pango:Source Code Variable 11
+	strip_workspace_numbers yes
+	gaps 0 5 5 5
+	separator_symbol "  "
+}
+bar {
+	id 3
+	position bottom
+	output eDP-1
+  	status_command -
+	colors {
+		background $bg-color
+	    	separator #75757500
+		#                  border             background         text
+		focused_workspace  $bg-color          $bg-color          $text-color
+		active_workspace   $bg-color          $bg-color          $text-color
+		inactive_workspace $bg-color          $bg-color          $text-color
+		urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
+	}
+	font pango:Source Code Variable 11
+	strip_workspace_numbers yes
+	gaps 0 5 5 5
+	separator_symbol "  "
+}
+# At startup open Pavucontrol to scratchpad
+for_window [app_id="pavucontrol"] move window to scratchpad
+exec pavucontrol
+
+# Map Qalculate shortcut
+for_window [app_id="qalculate-gtk"] floating enable
+bindsym $mod+c exec qalculate-gtk
+
+# xwayland disable
+
+# Exec wlsunset for Milano Lat/Lon
+exec wlsunset -l 45.5 -L 9.2
+
+# Screenshot
+bindsym $mod+Shift+p exec grim -t png -g "$(slurp)" - | wl-copy
+bindsym $mod+p exec grim -t png ~/Pictures/Screenshots/$(date +"%s.png")
+
+# Multimedia / Special keybindings
+bindsym XF86AudioRaiseVolume exec "pactl set-sink-volume alsa_output.pci-0000_00_1f.3.analog-stereo +5%"
+bindsym XF86AudioLowerVolume exec "pactl set-sink-volume alsa_output.pci-0000_00_1f.3.analog-stereo -5%"
+bindsym XF86AudioMute exec "pactl set-sink-mute alsa_output.pci-0000_00_1f.3.analog-stereo toggle"
+bindsym XF86MonBrightnessUp exec "xbacklight -inc 10"
+bindsym XF86MonBrightnessDown exec "xbacklight -dec 10"
