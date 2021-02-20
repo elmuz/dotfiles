@@ -1,11 +1,8 @@
-# At the moment not really used.
+# Wayland specific variables 
 
 XDG_SESSION_TYPE=wayland
 XDG_SESSION_DESKTOP=sway
 XDG_CURRENT_DESKTOP=sway
-
-TERMINAL="alacritty"
-BROWSER="firefox"
 
 _JAVA_AWT_WM_NONREPARENTING=1
 QT_AUTO_SCREEN_SCALE_FACTOR=1
