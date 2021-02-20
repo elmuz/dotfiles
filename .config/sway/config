@@ -313,7 +313,7 @@ bindsym $mod+c exec qalculate-gtk
 # xwayland disable
 
 # Exec wlsunset for Milano Lat/Lon
-exec wlsunset -l 45.5 -L 9.2
+exec wlsunset -t 3700 -T 5500 -l 45.5 -L 9.2 -g 0.8
 
 # Screenshot
 bindsym $mod+Shift+p exec grim -t png -g "$(slurp)" - | wl-copy
