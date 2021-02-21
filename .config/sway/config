@@ -9,14 +9,6 @@
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
 
-input * {
-    xkb_layout "wasd"
-    xkb_variant "altgr-intl-wasd"
-    # xkb_variant "altgr-intl"
-    #xkb_options compose:caps-altgr 
-    xkb_options shift:both_capslock,caps:super
-}
-
 font pango:DejaVu Sans Mono, Awesome 10
 
 # Your preferred terminal emulator
@@ -70,11 +62,17 @@ exec swayidle -w timeout 300 'swaymsg "output * dpms off"' resume 'swaymsg "outp
 #
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
+input * {
+    xkb_layout "wasd"
+    xkb_variant "altgr-intl-wasd"
+    # xkb_variant "altgr-intl"
+    #xkb_options compose:caps-altgr 
+    xkb_options shift:both_capslock,caps:super
+}
 
 ### Options
 focus_follows_mouse no
 mouse_warping none
-
 
 
 ### Key bindings
@@ -116,10 +114,10 @@ mouse_warping none
     bindsym $mod+Shift+Down move down
     bindsym $mod+Shift+Up move up
     bindsym $mod+Shift+Right move right
+
+### Workspaces
 #
-# Workspaces:
-#
-# Workspace vars
+# Workspace vars:
 set $wp1 ""
 set $wp2 ""
 set $wp3 ""
@@ -133,7 +131,8 @@ workspace $wp3 output $DP2
 workspace $wp8 output eDP-1
 
 # Windows titlebars and borders
-default_border pixel 0
+default_border none
+default_floating_border none
 
 # Gaps
 gaps inner 5
