@@ -238,9 +238,12 @@ bindsym $mod+Shift+l exec "i3lock --image ~/Pictures/archlinux.png --no-unlock-i
 # Edit i3 config file
 bindsym $mod+Shift+e exec "i3-sensible-terminal -e vim ~/.config/i3/config"
 
-# Compositor
-# exec xcompmgr -c -f -n
-exec_always --no-startup-id "picom --experimental-backends -b --config ~/.config/picom/config"
+#  Compositor
+exec_always xcompmgr -c -f -n
+# exec_always --no-startup-id "picom --experimental-backends -b --config ~/.config/picom/config"
+
+# Exec wlsunset for Milano Lat/Lon
+exec gammastep -m randr
 
 # Screnshot
 bindsym $mod+p exec maim ~/Pictures/Screenshots/$(date +%s).png
