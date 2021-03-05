@@ -1,0 +1,17 @@
+aic94xx-firmware
+grim-git
+meshlab
+neovim-symlinks
+paru
+python38
+slack-electron
+sway-git
+system76-acpi-dkms
+system76-dkms
+system76-driver
+wd719x-firmware
+wlroots-git
+wlsunset
+yadm
+zoom-system-qt
+zuki-themes
