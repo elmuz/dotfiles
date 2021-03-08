@@ -31,9 +31,9 @@ set $menu wofi --show run --location 0 --lines 8 -b
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 set $DP1 "Dell Inc. DELL S2721HS BJ7T223"
 set $DP2 "Dell Inc. DELL S2721HS JR1V123"
-output $DP2 resolution 1920x1080 position 1080,410 bg ~/Pictures/wallpaper_C.jpg fill
-output $DP1 resolution 1920x1080 position 0,0 transform 90 bg ~/Pictures/wallpaper_L.jpg fill
-output eDP-1 mode --custom 1368x768@60Hz position 3000,732 bg ~/Pictures/wallpaper_R.jpg fill
+output $DP1 position 0 0 transform 90 bg ~/Pictures/wallpaper_L.png fill
+output $DP2 position 1080 410 bg ~/Pictures/wallpaper_C.png fill
+output eDP-1 mode --custom 1368x768 position 3000 732 bg ~/Pictures/wallpaper_R.png fill
 
 ### Idle configuration
 #
@@ -248,7 +248,7 @@ bar {
 	id 1
 	position bottom
 	output $DP1
-  	status_command -
+ 	status_command -
 	colors {
 		background $bg-color
 	    	separator #75757500
