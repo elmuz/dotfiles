@@ -204,10 +204,10 @@ assign [class="zoom"] → $wp9
 #        status_command i3status
 #}
 
-set $bg-color 	         #2f343f
-set $inactive-bg-color   #2f343f
+set $bg-color 	         #00000000
+set $inactive-bg-color   #2f343f00
 set $text-color          #f3f4f5
-set $inactive-text-color #676E7D
+set $inactive-text-color #676E7D10
 set $urgent-bg-color     #E53935
 
 # window colors
@@ -219,17 +219,21 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 
 # bar
 bar {
-  	status_command i3status --config ~/.config/i3status/config
-	colors {
-		background $bg-color
-	    	separator #757575
-		#                  border             background         text
-		focused_workspace  $bg-color          $bg-color          $text-color
-		inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
-		urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
-	}
-	font pango:DejaVu Sans Mono, Awesome 9
-	strip_workspace_numbers yes
+	i3bar_command i3bar --transparency
+  	position bottom
+        status_command i3status --config ~/.config/i3status/config
+        colors {
+                background $bg-color
+                separator #75757500
+                #                  border             background         text
+                focused_workspace  $bg-color          $bg-color          $text-color
+                active_workspace   $bg-color          $bg-color          $text-color
+                inactive_workspace $bg-color          $bg-color          $text-color
+                urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
+        }
+        font pango:Source Code Variable 11
+        strip_workspace_numbers yes
+        separator_symbol "  "
 }
 
 # Lock screen
