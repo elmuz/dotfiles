@@ -129,6 +129,7 @@ workspace $wp1 output $DP2
 workspace $wp2 output $DP1
 workspace $wp3 output $DP2
 workspace $wp8 output eDP-1
+workspace $wp9 output eDP-1
 
 # Windows titlebars and borders
 default_border none
@@ -324,4 +325,5 @@ bindsym XF86AudioLowerVolume exec "pactl set-sink-volume alsa_output.pci-0000_00
 bindsym XF86AudioMute exec "pactl set-sink-mute alsa_output.pci-0000_00_1f.3.analog-stereo toggle"
 bindsym XF86MonBrightnessUp exec "xbacklight -inc 10"
 bindsym XF86MonBrightnessDown exec "xbacklight -dec 10"
-bindsym $mod+comma exec "GDK_BACKEND=x11 slack &> /dev/null &"
+bindsym $mod+comma exec "slack"
+# bindsym $mod+comma exec htop #layout splith; exec "watch -n 3 sensors"
