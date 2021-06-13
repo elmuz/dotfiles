@@ -11,6 +11,8 @@ set $mod Mod4
 
 font pango:DejaVu Sans Mono, Awesome 10
 
+include $XDG_CONFIG_HOME/sway/config.d/colors.conf
+
 # Your preferred terminal emulator
 set $term alacritty
 
@@ -29,11 +31,7 @@ set $menu wofi --show run --location 0 --lines 8 -b
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
-set $DP1 "Dell Inc. DELL S2721HS BJ7T223"
-set $DP2 "Dell Inc. DELL S2721HS JR1V123"
-output $DP1 position 0 0 transform 90 bg ~/Pictures/wallpaper_L.png fill
-output $DP2 position 1080 410 bg ~/Pictures/wallpaper_C.png fill
-output eDP-1 mode --custom 1368x768 position 3000 732 bg ~/Pictures/wallpaper_R.png fill
+include $XDG_CONFIG_HOME/sway/config.d/triple-screen.conf
 
 ### Idle configuration
 #
@@ -98,6 +96,12 @@ mouse_warping none
     # Reload the configuration file
     bindsym $mod+Shift+c reload
 
+    # Load laptop-mode config file
+    bindsym $mod+Shift+bracketleft set NUM_DISPLAYS single; reload
+
+    # Load triple-display config file
+    bindsym $mod+Shift+bracketright exec_always "systemctl --user set-environment NUM_DISPLAYS=triple"; reload
+
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+k exec swaymsg exit
 
@@ -125,11 +129,11 @@ set $wp5 ""
 set $wp8 ""
 set $wp9 ""
 
-workspace $wp1 output $DP2
-workspace $wp2 output $DP1
-workspace $wp3 output $DP2
-workspace $wp8 output eDP-1
-workspace $wp9 output eDP-1
+workspace $wp1 output $CENTER
+workspace $wp2 output $LEFT
+workspace $wp3 output $CENTER
+workspace $wp8 output $RIGHT
+workspace $wp9 output $RIGHT
 
 # Windows titlebars and borders
 default_border none
@@ -229,45 +233,16 @@ assign [app_id="zoom"] → $wp9
 #
 # Status Bar:
 #
-# Read `man 5 sway-bar` for more information about this section.
-set $bg-color 	         #00000000
-set $inactive-bg-color   #00000000
-set $text-color          #f3f4f5
-# set $inactive-text-color #676E7D
-set $inactive-text-color #00000010
-set $urgent-bg-color     #E53935
-
 # window colors
-#                       border              background         text                  indicator
+##                        border              background         text                  indicator
 # client.focused          $bg-color           $bg-color          $text-color           $bg-color
 # client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color  $bg-color
 # client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color  $bg-color
 # client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color           $bg-color
-
-# bar
-bar {
-	id 1
-	position bottom
-	output $DP1
- 	status_command -
-	colors {
-		background $bg-color
-	    	separator #75757500
-		#                  border             background         text
-		focused_workspace  $bg-color          $bg-color          $text-color
-		active_workspace   $bg-color          $bg-color          $text-color
-		inactive_workspace $bg-color          $bg-color          $text-color
-		urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
-	}
-	font pango:Source Code Variable 11
-	strip_workspace_numbers yes
-	gaps 0 5 5 5
-	separator_symbol "  "
-}
 bar {
 	id 2
 	position bottom
-	output $DP2
+	output $CENTER
   	status_command i3status --config ~/.config/i3status/config
 	colors {
 		background $bg-color
@@ -283,25 +258,7 @@ bar {
 	gaps 0 5 5 5
 	separator_symbol "  "
 }
-bar {
-	id 3
-	position bottom
-	output eDP-1
-  	status_command -
-	colors {
-		background $bg-color
-	    	separator #75757500
-		#                  border             background         text
-		focused_workspace  $bg-color          $bg-color          $text-color
-		active_workspace   $bg-color          $bg-color          $text-color
-		inactive_workspace $bg-color          $bg-color          $text-color
-		urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
-	}
-	font pango:Source Code Variable 11
-	strip_workspace_numbers yes
-	gaps 0 5 5 5
-	separator_symbol "  "
-}
+
 # At startup open Pavucontrol to scratchpad
 for_window [app_id="pavucontrol"] move window to scratchpad
 exec pavucontrol
