@@ -31,7 +31,7 @@ set $menu wofi --show run --location 0 --lines 8 -b
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
-include $XDG_CONFIG_HOME/sway/config.d/triple-screen.conf
+include $XDG_CONFIG_HOME/sway/config.d/screen.conf
 
 ### Idle configuration
 #
@@ -97,10 +97,10 @@ mouse_warping none
     bindsym $mod+Shift+c reload
 
     # Load laptop-mode config file
-    bindsym $mod+Shift+bracketleft set NUM_DISPLAYS single; reload
+    bindsym $mod+Shift+bracketleft exec "rm -f $XDG_CONFIG_HOME/sway/config.d/screen.conf && ln -s $XDG_CONFIG_HOME/sway/config.d/single-screen.conf $XDG_CONFIG_HOME/sway/config.d/screen.conf"; reload
 
     # Load triple-display config file
-    bindsym $mod+Shift+bracketright exec_always "systemctl --user set-environment NUM_DISPLAYS=triple"; reload
+    bindsym $mod+Shift+bracketright exec "rm -f $XDG_CONFIG_HOME/sway/config.d/screen.conf && ln -s $XDG_CONFIG_HOME/sway/config.d/triple-screen.conf $XDG_CONFIG_HOME/sway/config.d/screen.conf"; reload
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+k exec swaymsg exit
