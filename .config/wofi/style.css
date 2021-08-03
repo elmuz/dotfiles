@@ -43,9 +43,11 @@ padding: 5px;
 color: white;
 }
 
+/*
 #entry:nth-child(even){
     background-color: #404552;
 }
+*/
 
 #entry:selected {
     background-color: #5291e2;

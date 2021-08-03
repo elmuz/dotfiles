@@ -102,6 +102,7 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias act="source venv/bin/activate"
 
 # SSH agent
 SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
