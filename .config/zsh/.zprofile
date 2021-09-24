@@ -20,6 +20,7 @@ export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
 export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
 export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
 export MACHINE_STORAGE_PATH="$XDG_DATA_HOME"/docker-machine
+export SSB_HOME="$XDG_DATA_HOME"/zoom
 
 # Oh my Zsh
 ZSH="$XDG_DATA_HOME/oh-my-zsh"
