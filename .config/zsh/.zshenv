@@ -33,3 +33,6 @@ export VISUAL="nvim"
 
 # LIBVA
 export LIBVA_DRIVER_NAME="iHD"
+
+# OTHER VARS
+. "$XDG_CONFIG_HOME"/oxolo/hosts-variables.sh

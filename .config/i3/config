@@ -96,9 +96,9 @@ bindsym $mod+focus mode_toggle
 #bindsym $mod+d focus child
 
 # Monitors
-set $monitor_left DP-1
-set $monitor_center DP-2
-set $motnior_right eDP-1
+set $monitor_left DP1
+set $monitor_center DP2
+set $monitor_right eDP1
 
 # Workspace vars
 set $wp1 "1:"

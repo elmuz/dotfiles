@@ -9,7 +9,7 @@
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
 
-font pango:DejaVu Sans Mono, Awesome 10
+font pango:Fira Code, Awesome 10
 
 include $XDG_CONFIG_HOME/sway/config.d/colors.conf
 
@@ -45,7 +45,7 @@ include $XDG_CONFIG_HOME/sway/config.d/screen.conf
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
-exec swayidle -w timeout 300 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"'
+# exec swayidle -w timeout 300 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"'
 
 ### Input configuration
 #
@@ -258,6 +258,9 @@ bar {
 	gaps 0 5 5 5
 	separator_symbol "  "
 }
+
+# Force some windows to be in floating mode
+for_window [title="About Mozilla Firefox"] floating enable
 
 # At startup open Pavucontrol to scratchpad
 for_window [app_id="pavucontrol"] move window to scratchpad

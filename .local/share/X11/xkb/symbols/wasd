@@ -1,0 +1,18 @@
+default partial alphanumeric_keys modifier_keys
+
+// WASD Layout. Small variation from altgr-intl US keyboard, with arrow keys copied over the
+// typical gaming "wasd" pattern.
+partial alphanumeric_keys
+xkb_symbols "altgr-intl-wasd"  {
+
+    include "us(altgr-intl)"
+    name[Group1] = "AltGr international US, with WASD arrow keys";
+
+    key <AD02> {[ w,            W,          Up]};
+    key <AC01> {[ a,            A,          Left]};
+    key <AC02> {[ s,            S,          Down]};
+    key <AC03> {[ d,            D,          Right]};
+    key <AC08> {[ k,            K,          Home]};
+    key <AC09> {[ l,            L,          End]};
+
+};

@@ -1,8 +1,10 @@
 # Wayland specific variables 
 
-XDG_SESSION_TYPE=wayland
-XDG_SESSION_DESKTOP=sway
-XDG_CURRENT_DESKTOP=sway
+# The following XDG variables are already set
+# by the `sway` script located in "/usr/local/bin"
+#XDG_SESSION_TYPE=wayland
+#XDG_SESSION_DESKTOP=sway
+#XDG_CURRENT_DESKTOP=sway
 
 _JAVA_AWT_WM_NONREPARENTING=1
 QT_AUTO_SCREEN_SCALE_FACTOR=1

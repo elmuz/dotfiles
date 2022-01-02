@@ -1,6 +1,1 @@
-#!/bin/sh
-
-set -a
-[ -f $HOME/.config/sway/env ] && . "$HOME/.config/sway/env"
-set +a
-exec /usr/bin/sway
+/usr/local/bin/sway
