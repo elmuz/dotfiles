@@ -60,7 +60,7 @@ include $XDG_CONFIG_HOME/sway/config.d/screen.conf
 #
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
-input * {
+input "SONiX USB DEVICE" {
     xkb_layout "wasd"
     xkb_variant "altgr-intl-wasd"
     # xkb_variant "altgr-intl"
