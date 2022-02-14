@@ -263,7 +263,7 @@ bar {
 for_window [title="About Mozilla Firefox"] floating enable
 
 # At startup open Pavucontrol to scratchpad
-for_window [app_id="pavucontrol"] move window to scratchpad
+for_window [app_id="pavucontrol"] move window to scratchpad, resize set 960 480
 exec pavucontrol
 
 # Map Qalculate shortcut
@@ -271,6 +271,9 @@ for_window [app_id="qalculate-gtk"] floating enable
 bindsym $mod+c exec qalculate-gtk
 
 # xwayland disable
+
+# Set floating mode for wdisplays
+for_window [app_id="wdisplays"] floating enable, resize set 960 480
 
 # Exec wlsunset for Milano Lat/Lon
 exec gammastep -m wayland
