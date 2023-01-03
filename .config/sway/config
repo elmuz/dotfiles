@@ -19,8 +19,7 @@ set $term alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-#set $menu wofi --show run --location 0 --lines 8 -b
-set $menu wofi --show run --location 0 --lines 8 --display-drun ""
+set $menu fuzzel
 
 ### Output configuration
 #
@@ -109,6 +108,9 @@ mouse_warping none
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+k exec swaymsg exit
 
+    # Power menu
+    bindsym $mod+Escape exec $XDG_CONFIG_HOME/fuzzel/powermenu.sh
+
 # Moving around:
 #
     # Use $mod+[up|down|left|right]
@@ -140,11 +142,11 @@ workspace $wp8 output $RIGHT
 workspace $wp9 output $RIGHT
 
 # Windows titlebars and borders
-default_border none
-default_floating_border none
+default_border pixel 3
+#default_floating_border none
 
 # Gaps
-gaps inner 5
+gaps inner 15
 
 # Switch to workspace
 bindsym $mod+1 workspace $wp1
