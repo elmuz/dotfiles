@@ -9,7 +9,7 @@
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
 
-font pango:Fira Code, Awesome 10
+font pango:Fira Sans 10
 
 include $XDG_CONFIG_HOME/sway/config.d/colors.conf
 
@@ -71,10 +71,19 @@ input "12815:20499:SONiX_USB_DEVICE" {
     xkb_options shift:both_capslock,caps:super
 }
 
+input type:touchpad {
+    tap enabled
+    natural_scroll enabled
+}
+
 ### Options
 focus_follows_mouse no
 mouse_warping none
 
+### Appearance
+client.focused $nord10ff $nord10ff $nord4ff $nord9ff
+client.unfocused $nord3ff $nord3ff $nord4ff
+client.focused_inactive $nord3ff $nord3ff $nord4ff
 
 ### Key bindings
 #
@@ -251,15 +260,15 @@ bar {
 	output $CENTER
   	status_command i3status --config ~/.config/i3status/config
 	colors {
-		background $bg-color
+		background $transparent
 	    	separator #75757500
 		#                  border             background         text
-		focused_workspace  $bg-color          $bg-color          $text-color
-		active_workspace   $bg-color          $bg-color          $text-color
-		inactive_workspace $bg-color          $bg-color          $text-color
+		focused_workspace  $transparent       $transparent       $text-color
+		active_workspace   $transparent       $transparent       $text-color
+		inactive_workspace $transparent       $transparent       $text-color
 		urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
 	}
-	font pango:Source Code Variable 11
+	font pango:FiraCode Nerd Font 11
 	strip_workspace_numbers yes
 	gaps 0 5 5 5
 	separator_symbol "  "

@@ -1,6 +1,3 @@
-# Add .local/bin to PATH
-export PATH=$HOME/.local/bin:$PATH
-
 # Some XDG fixes
 export XDG_CONFIG_HOME="$HOME"/.config
 export XDG_CACHE_HOME="$HOME"/.cache
@@ -15,6 +12,8 @@ export LESSHISTFILE="$XDG_CACHE_HOME"/less/history
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
 export GTK_RC_FILES="$XDG_CONFIG_HOME"/gtk-1.0/gtkrc
 export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
+export GTK_THEME="Nordic"
+export QT_QPA_PLATFORMTHEME=gtk2
 export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
 export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
 export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
