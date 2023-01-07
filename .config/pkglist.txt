@@ -36,5 +36,6 @@ yadm
 zathura
 zathura-djvu
 zathura-pdf-mupdf
+zsh
 neovim-symlinks
 nordic-theme
