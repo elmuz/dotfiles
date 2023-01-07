@@ -7,14 +7,14 @@ sudo pacman --noconfirm -S --needed base-devel git
 # Dotfiles
 cd ~
 git clone https://github.com/elmuz/dotfiles
-p -r dotfiles/.config dotfiles/.local .
+cp -r dotfiles/.config dotfiles/.local .
 rm -r dotfiles
 
 # Install paru in order to manage AUR packages
 mkdir tools && cd tools
 git clone https://aur.archlinux.org/paru.git
 cd paru
-makepkg -si
+makepkg --noconfirm -si
 
 # Install required packages
 cd ~
