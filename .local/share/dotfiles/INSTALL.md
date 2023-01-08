@@ -1,15 +1,3 @@
-Prackages expected already installed:
-```shell
-sudo pacman -S --needed base-devel git
-```
-
-Clone dotfiles repository
-```shell
-cd ~
-git clone https://github.com/elmuz/dotfiles
-cp -r dotfiles/.config dotfiles/.local .
-```
-
 Install the desktop environment and its configuration
 ```shell
 curl -sSL https://raw.githubusercontent.com/elmuz/dotfiles/main/.local/share/dotfiles/INSTALL.sh | sh
