@@ -45,8 +45,8 @@ include $XDG_CONFIG_HOME/sway/config.d/screen.conf
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
-exec swayidle -w \
-	timeout 600 'systemctl suspend'	before-sleep 'swaylock -f'
+# exec swayidle -w \
+# 	timeout 600 'systemctl suspend'	before-sleep 'swaylock -f'
 
 bindsym $mod+l exec "swaylock -f"
 
@@ -139,10 +139,10 @@ client.focused_inactive $nord3ff $nord3ff $nord4ff
 # Workspace vars:
 set $wp1 ""
 set $wp2 ""
-set $wp3 ""
+set $wp3 ""
 set $wp5 ""
 set $wp8 ""
-set $wp9 ""
+set $wp9 ""
 
 workspace $wp1 output $CENTER
 workspace $wp2 output $LEFT
@@ -191,15 +191,15 @@ bindsym $mod+Shift+0 move container to workspace 10
     bindsym $mod+v split v
 
     # Switch the current container between different layout styles
-    bindsym $mod+q layout stacking
-    bindsym $mod+w layout tabbed
-    bindsym $mod+e layout toggle split
+    # bindsym $mod+q layout stacking
+    # bindsym $mod+w layout tabbed
+    # bindsym $mod+e layout toggle split
 
     # Make the current focus fullscreen
     bindsym $mod+f fullscreen
 
     # Toggle the current focus between tiling and floating mode
-    #bindsym $mod+Shift+space floating toggle
+    bindsym $mod+Shift+Return floating toggle
 
     # Swap focus between the tiling area and the floating area
     #bindsym $mod+space focus mode_toggle
@@ -268,7 +268,7 @@ bar {
 		inactive_workspace $transparent       $transparent       $text-color
 		urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
 	}
-	font pango:FiraCode Nerd Font 11
+	font pango:Hack Nerd Font 11
 	strip_workspace_numbers yes
 	gaps 0 5 5 5
 	separator_symbol "  "
@@ -304,3 +304,7 @@ bindsym XF86AudioMute exec "pactl set-sink-mute alsa_output.pci-0000_00_1f.3.ana
 bindsym XF86MonBrightnessUp exec "xbacklight -inc 10"
 bindsym XF86MonBrightnessDown exec "xbacklight -dec 10"
 bindsym $mod+comma exec "slack"
+
+# Funny XKCD comic strip
+for_window [app_id="com.github.rkoesters.xkcd-gtk"] floating enable, resize set 800 800
+exec com.github.rkoesters.xkcd-gtk

@@ -3,6 +3,12 @@ export XDG_CONFIG_HOME="$HOME"/.config
 export XDG_CACHE_HOME="$HOME"/.cache
 export XDG_DATA_HOME="$HOME"/.local/share
 
+# Zsh ties the PATH variable to a path array.
+# This allows you to manipulate PATH by simply modifying the path array.
+typeset -U path PATH
+path=(~/.local/bin $path)
+export PATH
+
 export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
 export HISTFILE="$XDG_DATA_HOME"/zsh/history
 export ZSH_COMPDUMP=$XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
@@ -20,7 +26,9 @@ export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
 export MACHINE_STORAGE_PATH="$XDG_DATA_HOME"/docker-machine
 export SSB_HOME="$XDG_DATA_HOME"/zoom
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
-
+export DVDCSS_CACHE="$XDG_DATA_HOME"/dvdcss
+export AWS_SHARED_CREDENTIALS_FILE="$XDG_CONFIG_HOME"/aws/credentials,
+export AWS_CONFIG_FILE="$XDG_CONFIG_HOME"/aws/config
 # Oh my Zsh
 ZSH="$XDG_DATA_HOME/oh-my-zsh"
 

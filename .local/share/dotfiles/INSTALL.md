@@ -1,7 +1,17 @@
-Install the desktop environment and its configuration
+# System configuraiton restoring dotfiles
+
+This guide assumes a working base system, with user and `sudo` privileges.
+
+## Install the desktop environment and its configuration
+
+In general, never trust an external script (like this one). Read it carefully before executing
+it blindly.
+
 ```shell
 curl -sSL https://raw.githubusercontent.com/elmuz/dotfiles/main/.local/share/dotfiles/INSTALL.sh | sh
 ```
+
+## Extras
 
 For wallpapers, place your images in `~/Pictures`, in particular:
 - `wallpaper_L.jpg`, vertical 1080p (DELL)

@@ -185,10 +185,13 @@ texworks
 thermald
 tor
 ttf-cascadia-code
+ttf-croscore
 ttf-dejavu
-ttf-fira-code
+ttf-fira-sans
+ttf-firacode-nerd
 ttf-font-awesome
 ttf-ibm-plex
+ttf-liberation
 usbutils
 vulkan-intel
 wget
