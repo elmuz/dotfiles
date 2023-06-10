@@ -142,7 +142,7 @@ set $wp2 ""
 set $wp3 ""
 set $wp5 ""
 set $wp8 ""
-set $wp9 ""
+set $wp9 "󰋋"
 
 workspace $wp1 output $CENTER
 workspace $wp2 output $LEFT
@@ -274,8 +274,12 @@ bar {
 	separator_symbol "  "
 }
 
+
+# Application-specific mods
 # Force some windows to be in floating mode
 for_window [title="About Mozilla Firefox"] floating enable
+# This avoids PyCharm tooltip messages to gain focus
+# no_focus [app_id="jetbrains-pycharm"]
 
 # At startup open Pavucontrol to scratchpad
 for_window [app_id="pavucontrol"] move window to scratchpad, resize set 960 480
@@ -305,6 +309,5 @@ bindsym XF86MonBrightnessUp exec "xbacklight -inc 10"
 bindsym XF86MonBrightnessDown exec "xbacklight -dec 10"
 bindsym $mod+comma exec "slack"
 
-# Funny XKCD comic strip
-for_window [app_id="com.github.rkoesters.xkcd-gtk"] floating enable, resize set 800 800
-exec com.github.rkoesters.xkcd-gtk
+# This line avoids delay for GTK+ apps (e.g Firefox)
+exec systemctl --user import-environment

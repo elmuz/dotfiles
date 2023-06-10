@@ -1,7 +1,8 @@
 # /bin/sh
 
 # Some basic requirements
-sudo pacman --noconfirm -Syu
+sudo pacman --noconfirm -Syyu
+sudo pacman-key --init
 sudo pacman --noconfirm -S --needed base-devel git
 
 # Dotfiles
