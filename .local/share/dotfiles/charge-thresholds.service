@@ -1,0 +1,10 @@
+[Unit]
+Description=Set the charge threshold at startup.
+After=default.target
+
+[Service]
+Type=simple
+ExecStart=sh /etc/systemd/system/charge-thresholds.sh
+
+[Install]
+WantedBy=default.target

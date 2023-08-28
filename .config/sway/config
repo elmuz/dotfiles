@@ -112,7 +112,7 @@ client.focused_inactive $nord3ff $nord3ff $nord4ff
     bindsym $mod+Shift+bracketleft exec "rm -f $XDG_CONFIG_HOME/sway/config.d/screen.conf && ln -s $XDG_CONFIG_HOME/sway/config.d/single-screen.conf $XDG_CONFIG_HOME/sway/config.d/screen.conf"; reload
 
     # Load triple-display config file
-    bindsym $mod+Shift+bracketright exec "rm -f $XDG_CONFIG_HOME/sway/config.d/screen.conf && ln -s $XDG_CONFIG_HOME/sway/config.d/triple-screen.conf $XDG_CONFIG_HOME/sway/config.d/screen.conf"; reload
+    bindsym $mod+Shift+bracketright exec "rm -f $XDG_CONFIG_HOME/sway/config.d/screen.conf && ln -s $XDG_CONFIG_HOME/sway/config.d/double-screen.conf $XDG_CONFIG_HOME/sway/config.d/screen.conf"; reload
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+k exec swaymsg exit
@@ -145,7 +145,7 @@ set $wp8 ""
 set $wp9 "󰋋"
 
 workspace $wp1 output $CENTER
-workspace $wp2 output $LEFT
+workspace $wp2 output $CENTER
 workspace $wp3 output $CENTER
 workspace $wp8 output $RIGHT
 workspace $wp9 output $RIGHT
@@ -255,7 +255,7 @@ assign [app_id="zoom"] → $wp9
 # client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color  $bg-color
 # client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color           $bg-color
 bar {
-	id 2
+	id 1
 	position bottom
 	output $CENTER
   	status_command i3status --config ~/.config/i3status/config
@@ -294,7 +294,7 @@ bindsym $mod+c exec qalculate-gtk
 # Set floating mode for wdisplays
 for_window [app_id="wdisplays"] floating enable, resize set 960 480
 
-# Exec wlsunset for Milano Lat/Lon
+# Apply redshift
 exec gammastep -m wayland
 
 # Screenshot

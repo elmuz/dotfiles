@@ -1,4 +1,4 @@
-# System configuraiton restoring dotfiles
+# System configuration restoring dotfiles
 
 This guide assumes a working base system, with user and `sudo` privileges.
 
@@ -20,7 +20,12 @@ For wallpapers, place your images in `~/Pictures`, in particular:
 
 ## Qt / Gtk
 Apart from config files (for Gtk 2.x, 3.x, 4.x) and ENV variables (Qt5, Qt6)
-the followinf packages are required for Qt to match Gtk2 style:
+the following packages are required for Qt to match Gtk2 style:
 - qt5-styleplugins
 - qt6gtk2
 
+## Redshift
+- `gammastep` applied via sway config
+
+## Custom script (executed via systemd service) to set battery charging thresholds.
+Verify by `cat /sys/class/power_supply/BAT0/charge_control_{start,end}_threshold`

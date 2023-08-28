@@ -41,6 +41,10 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 # Fix keyboard
 sudo cp .local/share/X11/xkb/symbols/wasd /usr/share/X11/xkb/symbols/
 
+# Battery charging thresholds
+sudo cp .local/share/dotfiles/charge-thresholds.s* /etc/systemd/system/
+sudo systemctl enable charge-thresholds
+
 # Clean bash stuff
 rm -r .bash*
 
