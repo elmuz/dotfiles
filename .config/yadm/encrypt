@@ -1,1 +1,2 @@
-.ssh/id_rsa_github
+.ssh/*.key
+.config/exercism/user.json
