@@ -11,6 +11,12 @@ it blindly.
 curl -sSL https://raw.githubusercontent.com/elmuz/dotfiles/main/.local/share/dotfiles/INSTALL.sh | sh
 ```
 
+You may want to decrypt any secret-related config file using `yadm` (e.g. ssh keys):
+```shell
+yadm decrypt
+```
+The above command will ask for a password and will restore any file contained in `.local/share/yadm/archive`.
+
 ## Extras
 
 For wallpapers, place your images in `~/Pictures`, in particular:
