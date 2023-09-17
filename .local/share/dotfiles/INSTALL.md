@@ -25,11 +25,11 @@ The variable `$GNUPGHOME` is defined during `INSTALL.sh` script.
 ### Firefox
 - Profile-sync-daemon.  It's enough to enable and start `psd` with `systemctl --user {enable,start} psd`.
 - Move disk cache to RAM. Open `about:config` and set `browser.cache.disk.parent_directory` to `/run/user/[UID]/firefox`,
-  where `UID` is your user's ID which can be obtained by running `id -u`.
+  where `UID` is your user's ID which can be obtained by running `id -u`. Open `about:cache` to verify the new disk cache
+  location. 
 
-Open about:cache to verify the new disk cache location. 
-
-For wallpapers, place your images in `~/Pictures`, in particular:
+## Wallpapers
+Place your images in `~/Pictures`, in particular the following are hard-coded in Sway configuration file:
 - `wallpaper_C.jpg`, horizontal 1080p (DELL)
 - `wallpaper_R.jpg`, horizontal 720p (laptop)
 
