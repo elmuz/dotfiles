@@ -7,6 +7,7 @@ gammastep
 grim
 imv
 i3status
+less
 mpv
 neofetch
 neovim
@@ -28,6 +29,7 @@ ttf-croscore
 ttf-fira-sans
 ttf-firacode-nerd
 ttf-font-awesome
+ttf-hack-nerd-font
 ttf-linux-libertine
 wireplumber
 wl-clipboard
