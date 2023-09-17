@@ -10,6 +10,7 @@ it blindly.
 ```shell
 curl -sSL https://raw.githubusercontent.com/elmuz/dotfiles/main/.local/share/dotfiles/INSTALL.sh | sh
 ```
+At this point it's better to logout and login again.
 
 You may want to decrypt any secret-related config file using `yadm` (e.g. ssh keys):
 ```shell
@@ -19,7 +20,14 @@ yadm decrypt
 The above command will ask for a password and will restore any file contained in `.local/share/yadm/archive`.
 The variable `$GNUPGHOME` is defined during `INSTALL.sh` script.
 
-## Extras
+## Extras / Appearance
+
+### Firefox
+- Profile-sync-daemon.  It's enough to enable and start `psd` with `systemctl --user {enable,start} psd`.
+- Move disk cache to RAM. Open `about:config` and set `browser.cache.disk.parent_directory` to `/run/user/[UID]/firefox`,
+  where `UID` is your user's ID which can be obtained by running `id -u`.
+
+Open about:cache to verify the new disk cache location. 
 
 For wallpapers, place your images in `~/Pictures`, in particular:
 - `wallpaper_C.jpg`, horizontal 1080p (DELL)
