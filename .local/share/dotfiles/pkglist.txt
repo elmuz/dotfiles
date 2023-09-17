@@ -6,6 +6,7 @@ fuzzel
 gammastep
 grim
 imv
+i3status
 mpv
 neofetch
 neovim
