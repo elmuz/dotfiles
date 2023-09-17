@@ -28,12 +28,12 @@ The variable `$GNUPGHOME` is defined during `INSTALL.sh` script.
   where `UID` is your user's ID which can be obtained by running `id -u`. Open `about:cache` to verify the new disk cache
   location. 
 
-## Wallpapers
+### Wallpapers
 Place your images in `~/Pictures`, in particular the following are hard-coded in Sway configuration file:
 - `wallpaper_C.jpg`, horizontal 1080p (DELL)
 - `wallpaper_R.jpg`, horizontal 720p (laptop)
 
-## Qt / Gtk
+### Qt / Gtk
 Apart from config files (for Gtk 2.x, 3.x, 4.x) and ENV variables (Qt5, Qt6)
 the following packages are required for Qt to match Gtk2 style:
 - qt5-styleplugins
