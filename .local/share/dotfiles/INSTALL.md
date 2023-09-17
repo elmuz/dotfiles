@@ -13,14 +13,15 @@ curl -sSL https://raw.githubusercontent.com/elmuz/dotfiles/main/.local/share/dot
 
 You may want to decrypt any secret-related config file using `yadm` (e.g. ssh keys):
 ```shell
+mkdir $GNUPGHOME
 yadm decrypt
 ```
 The above command will ask for a password and will restore any file contained in `.local/share/yadm/archive`.
+The variable `$GNUPGHOME` is defined during `INSTALL.sh` script.
 
 ## Extras
 
 For wallpapers, place your images in `~/Pictures`, in particular:
-- `wallpaper_L.jpg`, vertical 1080p (DELL)
 - `wallpaper_C.jpg`, horizontal 1080p (DELL)
 - `wallpaper_R.jpg`, horizontal 720p (laptop)
 
