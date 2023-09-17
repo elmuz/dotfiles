@@ -3,13 +3,11 @@
 # Some basic requirements
 sudo pacman --noconfirm -Syyu
 sudo pacman-key --init
-sudo pacman --noconfirm -S --needed base-devel git
+sudo pacman --noconfirm -S --needed base-devel yadm
 
 # Dotfiles
 cd ~
-git clone https://github.com/elmuz/dotfiles
-cp -r dotfiles/.config dotfiles/.local .
-rm -r dotfiles
+yadm clone https://github.com/elmuz/dotfiles
 
 # This should help keeping clean the home directory
 source .config/zsh/.zshenv
