@@ -2,6 +2,7 @@
 export XDG_CONFIG_HOME="$HOME"/.config
 export XDG_CACHE_HOME="$HOME"/.cache
 export XDG_DATA_HOME="$HOME"/.local/share
+export XDG_STATE_HOME="$HOME"/.local/state
 
 # Zsh ties the PATH variable to a path array.
 # This allows you to manipulate PATH by simply modifying the path array.
@@ -10,8 +11,9 @@ path=(~/.local/bin $path)
 export PATH
 
 export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
-export HISTFILE="$XDG_DATA_HOME"/zsh/history
+export HISTFILE="$XDG_STATE_HOME/$(basename $SHELL)"/history
 export ZSH_COMPDUMP=$XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
+export PYENV_ROOT=$XDG_DATA_HOME/pyenv
 export LESSKEY="$XDG_CONFIG_HOME"/less/lesskey
 export GNUPGHOME="$XDG_DATA_HOME"/gnupg
 export LESSHISTFILE="$XDG_CACHE_HOME"/less/history

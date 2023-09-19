@@ -14,6 +14,7 @@ source .config/zsh/.zshenv
 mkdir -p $XDG_CONFIG_HOME
 mkdir -p $XDG_CACHE_HOME
 mkdir -p $XDG_DATA_HOME
+mkdir -p $XDG_STATE_HOME
 
 # Install paru in order to manage AUR packages
 mkdir tools && cd tools
@@ -26,10 +27,10 @@ cd ~
 paru -S --needed --noconfirm - < ~/.local/share/dotfiles/pkglist.txt
 
 # Shell steroids
-sudo usermod -s /usr/bin/zsh $USER
+sudo usermod -s /bin/zsh $USER
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 mv .oh-my-zsh $HOME/.local/share/oh-my-zsh
-sudo sh -c 'echo "export ZDOTDIR=\$HOME/.config/zsh" > /etc/zsh/zshenv'
+sudo sh -c 'echo "export ZDOTDIR=\$HOME/.config/zsh" >> /etc/zsh/zshenv'
 
 # Fix (neo)vim
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
