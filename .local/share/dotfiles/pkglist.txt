@@ -1,6 +1,6 @@
 alacritty
 btop
-feh
+swayimg
 firefox
 fuzzel
 gammastep
