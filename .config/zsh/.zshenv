@@ -31,8 +31,9 @@ export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 export DVDCSS_CACHE="$XDG_DATA_HOME"/dvdcss
 export AWS_SHARED_CREDENTIALS_FILE="$XDG_CONFIG_HOME"/aws/credentials,
 export AWS_CONFIG_FILE="$XDG_CONFIG_HOME"/aws/config
+
 # Oh my Zsh
-ZSH="$XDG_DATA_HOME/oh-my-zsh"
+export ZSH="$XDG_DATA_HOME/oh-my-zsh"
 
 # Default programs
 export TERMINAL="alacritty"

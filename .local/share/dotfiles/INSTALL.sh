@@ -28,9 +28,10 @@ paru -S --needed --noconfirm - < ~/.local/share/dotfiles/pkglist.txt
 
 # Shell steroids
 sudo usermod -s /bin/zsh $USER
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-mv .oh-my-zsh $HOME/.local/share/oh-my-zsh
 sudo sh -c 'echo "export ZDOTDIR=\$HOME/.config/zsh" >> /etc/zsh/zshenv'
+KEEP_ZSHRC=yes RUNZSH=no sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+mkdir -p $XDG_DATA_HOME/zsh
+mkdir -p $XDG_CACHE_HOME/zsh
 
 # Fix (neo)vim
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
