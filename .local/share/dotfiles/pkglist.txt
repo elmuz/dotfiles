@@ -35,6 +35,7 @@ wireplumber
 wl-clipboard
 wlroots
 xdg-desktop-portal-wlr
+xdg-desktop-portal-gtk
 yadm
 zathura
 zathura-djvu
@@ -42,3 +43,4 @@ zathura-pdf-mupdf
 zsh
 neovim-symlinks
 nordic-theme
+breeze-obsidian-cursor-theme

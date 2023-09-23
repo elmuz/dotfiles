@@ -311,3 +311,6 @@ bindsym $mod+comma exec "slack"
 
 # This line avoids delay for GTK+ apps (e.g Firefox)
 exec systemctl --user import-environment
+
+# Appearance
+exec_always import-gsettings.sh
