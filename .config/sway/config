@@ -111,7 +111,7 @@ client.focused_inactive $nord3ff $nord3ff $nord4ff
     # Load laptop-mode config file
     bindsym $mod+Shift+bracketleft exec "rm -f $XDG_CONFIG_HOME/sway/config.d/screen.conf && ln -s $XDG_CONFIG_HOME/sway/config.d/single-screen.conf $XDG_CONFIG_HOME/sway/config.d/screen.conf"; reload
 
-    # Load triple-display config file
+    # Load extended display config file
     bindsym $mod+Shift+bracketright exec "rm -f $XDG_CONFIG_HOME/sway/config.d/screen.conf && ln -s $XDG_CONFIG_HOME/sway/config.d/double-screen.conf $XDG_CONFIG_HOME/sway/config.d/screen.conf"; reload
 
     # Exit sway (logs you out of your Wayland session)
@@ -258,7 +258,7 @@ bar {
 	id 1
 	position bottom
 	output $CENTER
-  	status_command i3status --config ~/.config/i3status/config
+  	status_command i3status --config $XDG_CONFIG_HOME/i3status/config
 	colors {
 		background $transparent
 	    	separator #75757500
@@ -299,12 +299,12 @@ exec gammastep -m wayland
 
 # Screenshot
 bindsym $mod+Shift+p exec grim -t png -g "$(slurp)" - | wl-copy
-bindsym $mod+p exec grim -t png ~/Pictures/Screenshots/$(date +"%s.png")
+bindsym $mod+p exec grim -t png $XDG_PICTURES_DIR/Screenshots/$(date +"%s.png")
 
 # Multimedia / Special keybindings
-bindsym XF86AudioRaiseVolume exec "pactl set-sink-volume alsa_output.pci-0000_00_1f.3.analog-stereo +5%"
-bindsym XF86AudioLowerVolume exec "pactl set-sink-volume alsa_output.pci-0000_00_1f.3.analog-stereo -5%"
-bindsym XF86AudioMute exec "pactl set-sink-mute alsa_output.pci-0000_00_1f.3.analog-stereo toggle"
+bindsym XF86AudioRaiseVolume exec "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
+bindsym XF86AudioLowerVolume exec "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+bindsym XF86AudioMute exec "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
 bindsym XF86MonBrightnessUp exec "xbacklight -inc 10"
 bindsym XF86MonBrightnessDown exec "xbacklight -dec 10"
 bindsym $mod+comma exec "slack"

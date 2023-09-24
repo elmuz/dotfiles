@@ -5,12 +5,6 @@ sudo pacman --noconfirm -Syyu
 sudo pacman-key --init
 sudo pacman --noconfirm -S --needed base-devel yadm
 
-# Install paru in order to manage AUR packages
-mkdir tools && cd tools
-git clone https://aur.archlinux.org/paru.git
-cd paru
-makepkg --noconfirm -si
-
 # Dotfiles
 cd ~
 yadm clone https://github.com/elmuz/dotfiles
@@ -21,6 +15,18 @@ mkdir -p $XDG_CONFIG_HOME
 mkdir -p $XDG_CACHE_HOME
 mkdir -p $XDG_DATA_HOME
 mkdir -p $XDG_STATE_HOME
+
+mkdir -p $XDG_DOCUMENTS_DIR
+mkdir -p $XDG_DOWNLOAD_DIR
+mkdir -p $XDG_MUSIC_DIR
+mkdir -p $XDG_PICTURES_DIR
+mkdir -p $XDG_VIDEOS_DIR
+
+# Install paru in order to manage AUR packages
+mkdir tools && cd tools
+git clone https://aur.archlinux.org/paru.git
+cd paru
+makepkg --noconfirm -si
 
 # Install required packages
 cd ~
