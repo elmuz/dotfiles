@@ -42,5 +42,3 @@ zathura-djvu
 zathura-pdf-mupdf
 zsh
 neovim-symlinks
-nordic-theme
-breeze-obsidian-cursor-theme
