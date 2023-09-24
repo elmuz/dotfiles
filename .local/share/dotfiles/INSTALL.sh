@@ -41,8 +41,8 @@ cd Nordic-$NORDIC_VERS/kde/cursors
 sh build.sh
 mkdir $XDG_DATA_HOME/icons
 mv Nordic-cursors $XDG_DATA_HOME/icons/
-cd /tmp
-rm -rf Nordic*
+cd $HOME
+rm -rf /tmp/Nordic*
 paru -Rs --noconfirm inkscape xorg-xcursorgen
 
 # Shell steroids
