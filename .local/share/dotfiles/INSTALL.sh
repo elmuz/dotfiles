@@ -34,7 +34,7 @@ tar xaf nordic.tar.xz
 mkdir $XDG_DATA_HOME/themes
 mv Nordic $XDG_DATA_HOME/themes/
 rm nordic.tar.xz
-paru -S --needed --noconfirm inkscape xorg-xcursorsgen
+paru -S --needed --noconfirm inkscape xorg-xcursorgen
 curl -fLo nordic.tar.gz https://github.com/EliverLara/Nordic/archive/refs/tags/v$NORDIC_VERS.tar.gz
 tar xaf nordic.tar.gz
 cd Nordic-$NORDIC_VERS/kde/cursors
@@ -43,9 +43,7 @@ mkdir $XDG_DATA_HOME/icons
 mv Nordic-cursors $XDG_DATA_HOME/icons/
 cd /tmp
 rm -rf Nordic*
-paru -Rs --noconfirm inkscape xorg-xcursorsgen
-
-
+paru -Rs --noconfirm inkscape xorg-xcursorgen
 
 # Shell steroids
 sudo usermod -s /bin/zsh $USER
