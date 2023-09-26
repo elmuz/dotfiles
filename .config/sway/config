@@ -299,7 +299,7 @@ exec gammastep -m wayland
 
 # Screenshot
 bindsym $mod+Shift+p exec grim -t png -g "$(slurp)" - | wl-copy
-bindsym $mod+p exec grim -t png $XDG_PICTURES_DIR/Screenshots/$(date +"%s.png")
+bindsym $mod+p exec "grim -t png $XDG_PICTURES_DIR/Screenshots/$(date +%s.png)"
 
 # Multimedia / Special keybindings
 bindsym XF86AudioRaiseVolume exec "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
