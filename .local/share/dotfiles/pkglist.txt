@@ -11,6 +11,7 @@ less
 mpv
 neofetch
 neovim
+neovim-symlinks
 papirus-icon-theme
 pavucontrol
 pipewire
@@ -36,9 +37,9 @@ wl-clipboard
 wlroots
 xdg-desktop-portal-wlr
 xdg-desktop-portal-gtk
+xorg-xwayland
 yadm
 zathura
 zathura-djvu
 zathura-pdf-mupdf
 zsh
-neovim-symlinks

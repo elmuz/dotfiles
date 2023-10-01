@@ -31,6 +31,7 @@ set $menu fuzzel
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
+# exec way-displays > /tmp/way-displays.${XDG_VTNR}.${USER}.log 2>&1
 include $XDG_CONFIG_HOME/sway/config.d/screen.conf
 
 ### Idle configuration
@@ -140,9 +141,13 @@ client.focused_inactive $nord3ff $nord3ff $nord4ff
 set $wp1 ""
 set $wp2 ""
 set $wp3 ""
+set $wp4 "4"
 set $wp5 ""
+set $wp6 "6"
+set $wp7 "7"
 set $wp8 ""
 set $wp9 "󰋋"
+set $wp10 "10"
 
 workspace $wp1 output $CENTER
 workspace $wp2 output $CENTER
@@ -161,25 +166,25 @@ gaps inner 15
 bindsym $mod+1 workspace $wp1
 bindsym $mod+2 workspace $wp2
 bindsym $mod+3 workspace $wp3
-bindsym $mod+4 workspace 4
+bindsym $mod+4 workspace $wp4
 bindsym $mod+5 workspace $wp5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
+bindsym $mod+6 workspace $wp6
+bindsym $mod+7 workspace $wp7
 bindsym $mod+8 workspace $wp8
 bindsym $mod+9 workspace $wp9
-bindsym $mod+0 workspace 10
+bindsym $mod+0 workspace $wp10
 
 # Move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $wp1
 bindsym $mod+Shift+2 move container to workspace $wp2
 bindsym $mod+Shift+3 move container to workspace $wp3
-bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+4 move container to workspace $wp4
 bindsym $mod+Shift+5 move container to workspace $wp5
-bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+6 move container to workspace $wp6
+bindsym $mod+Shift+7 move container to workspace $wp7
 bindsym $mod+Shift+8 move container to workspace $wp8
 bindsym $mod+Shift+9 move container to workspace $wp9
-bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+0 move container to workspace $wp10
 
 #
 # Layout stuff:
@@ -312,5 +317,6 @@ bindsym $mod+comma exec "slack"
 # This line avoids delay for GTK+ apps (e.g Firefox)
 exec systemctl --user import-environment
 
-# Appearance
+# Appearance. The best way to apply a GTK theme is to pass via `gsettings`.
+# This script parses the configuration files and applies theme/font/cursor/icon.
 exec_always import-gsettings.sh
