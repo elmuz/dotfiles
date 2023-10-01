@@ -20,6 +20,14 @@ yadm decrypt
 The above command will ask for a password and will restore any file contained in `.local/share/yadm/archive`.
 The variable `$GNUPGHOME` is defined during `INSTALL.sh` script.
 
+## Graphics
+If system is based on modern Intel hardware
+```commandline
+paru -S --needed --noconfirm - < ~/.local/share/dotfiles/pkglist-intel.txt
+echo "options i915 enable_guc=2" | sudo tee /etc/modprobe.d/i915.conf
+sudo mkinitcpio -P
+```
+
 ## Extras / Appearance
 
 ### Firefox
@@ -30,8 +38,8 @@ The variable `$GNUPGHOME` is defined during `INSTALL.sh` script.
 
 ### Wallpapers
 Place your images in `~/Pictures`, in particular the following are hard-coded in Sway configuration file:
-- `wallpaper_C.jpg`, horizontal 1080p (DELL)
-- `wallpaper_R.jpg`, horizontal 720p (laptop)
+- `wallpaper_C.jpg`, horizontal 2160p (DELL)
+- `wallpaper_R.jpg`, horizontal 1080p (laptop)
 
 ### Qt / Gtk
 Apart from config files (for Gtk 2.x, 3.x, 4.x) and ENV variables (Qt5, Qt6)

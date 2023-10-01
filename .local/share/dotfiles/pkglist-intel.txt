@@ -1,0 +1,5 @@
+intel-gpu-tools
+intel-media-driver
+intel-ucode
+libva-utils
+vulkan-intel

@@ -1,11 +1,9 @@
 alacritty
 btop
-swayimg
 firefox
 fuzzel
 gammastep
 grim
-imv
 i3status
 less
 mpv
@@ -24,6 +22,7 @@ slurp
 sway
 swaybg
 swayidle
+swayimg
 swaylock
 ttf-cascadia-code
 ttf-croscore

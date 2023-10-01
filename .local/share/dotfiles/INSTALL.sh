@@ -29,7 +29,7 @@ cd paru
 makepkg --noconfirm -si
 
 # Install required packages
-cd ~
+cd $HOME
 paru -S --needed --noconfirm - < ~/.local/share/dotfiles/pkglist.txt
 
 # Extra cosmetics (e.g. themes and cursors)
