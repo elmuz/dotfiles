@@ -46,7 +46,7 @@ window:
     x: 10
     y: 10
 
-  opacity: 1.0
+  opacity: 0.95
 
   # Spread additional padding evenly around the terminal content.
   #dynamic_padding: false
@@ -149,7 +149,7 @@ font:
     #style: Bold Italic
 
   # Point size
-  size: 11.0
+  size: 14.0
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter

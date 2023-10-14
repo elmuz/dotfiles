@@ -280,9 +280,10 @@ bar {
 }
 
 
-# Application-specific mods
+########### Application-specific mods #############
 # Force some windows to be in floating mode
 for_window [title="About Mozilla Firefox"] floating enable
+
 # This avoids PyCharm tooltip messages to gain focus
 # no_focus [app_id="jetbrains-pycharm"]
 
@@ -294,10 +295,10 @@ exec pavucontrol
 for_window [app_id="qalculate-gtk"] floating enable
 bindsym $mod+c exec qalculate-gtk
 
-# xwayland disable
-
-# Set floating mode for wdisplays
 for_window [app_id="wdisplays"] floating enable, resize set 960 480
+for_window [app_id="blueberry.py"] floating enable, resize set 480 640
+
+#######################################################
 
 # Apply redshift
 exec gammastep -m wayland
