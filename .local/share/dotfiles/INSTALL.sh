@@ -7,7 +7,7 @@ sudo pacman --noconfirm -S --needed base-devel yadm
 
 # Dotfiles
 cd ~
-yadm clone https://github.com/elmuz/dotfiles
+yadm clone https://github.com/elmuz/dotfiles --bootstrap
 
 # This should help keeping clean the home directory
 source .config/zsh/.zshenv
