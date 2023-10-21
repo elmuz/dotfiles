@@ -23,6 +23,7 @@ export HISTFILE="$XDG_STATE_HOME/$(basename $SHELL)"/history
 export ZSH_COMPDUMP=$XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
 export PYENV_ROOT=$XDG_DATA_HOME/pyenv
 export LESSKEY="$XDG_CONFIG_HOME"/less/lesskey
+export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
 export GNUPGHOME="$XDG_DATA_HOME"/gnupg
 export LESSHISTFILE="$XDG_CACHE_HOME"/less/history
 export CARGO_HOME="$XDG_DATA_HOME"/cargo

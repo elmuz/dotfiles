@@ -105,6 +105,7 @@ fi
 alias act="source venv/bin/activate"
 alias swayconf="vim $XDG_CONFIG_HOME/sway/config"
 alias la7="mpv https://d15umi5iaezxgx.cloudfront.net/LA7/CLN/HLS-B/Live_1280x720_.m3u8"
+alias wget=wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"
 
 # SSH agent
 SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"

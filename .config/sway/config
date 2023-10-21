@@ -35,13 +35,10 @@ set $menu fuzzel
 include $XDG_CONFIG_HOME/sway/config.d/screen.conf
 
 ### Idle configuration
-#
-# Example configuration:
-#
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-#          before-sleep 'swaylock -f -c 000000'
+ exec swayidle -w \
+          timeout 300 'swaylock -f -c 000000' \
+          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+          before-sleep 'swaylock -f'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -67,8 +64,6 @@ bindsym $mod+l exec "swaylock -f"
 input "12815:20499:SONiX_USB_DEVICE" {
     xkb_layout "wasd"
     xkb_variant "altgr-intl-wasd"
-    # xkb_variant "altgr-intl"
-    #xkb_options compose:caps-altgr 
     xkb_options shift:both_capslock,caps:super
 }
 
@@ -246,7 +241,7 @@ bindsym $mod+r mode "resize"
 # Assign applications to specific workspaces
 assign [app_id="firefox"] → $wp1
 assign [class="jetbrains-pycharm"] → $wp3
-assign [class="Gimp"] → $wp5
+assign [app_id="gimp"] → $wp5
 assign [class="Slack"] → $wp8
 assign [app_id="zoom"] → $wp9
 
@@ -273,7 +268,7 @@ bar {
 		inactive_workspace $transparent       $transparent       $text-color
 		urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
 	}
-	font pango:Hack Nerd Font 11
+	font pango:Hack Nerd Font 12
 	strip_workspace_numbers yes
 	gaps 0 5 5 5
 	separator_symbol "  "
