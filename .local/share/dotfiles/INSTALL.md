@@ -82,7 +82,7 @@ sudo mkinitcpio -P
 
 ### Wallpapers
 Place your images in `~/Pictures`, in particular the following are hard-coded in Sway configuration file:
-- `wallpaper_C.jpg`, horizontal 2160p (DELL)
+- `wallpaper_C.jpg`, horizontal 2160p (4k external monitor)
 - `wallpaper_R.jpg`, horizontal 1080p (laptop)
 
 ### Qt / Gtk
