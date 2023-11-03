@@ -106,6 +106,8 @@ alias act="source venv/bin/activate"
 alias swayconf="vim $XDG_CONFIG_HOME/sway/config"
 alias la7="mpv https://d15umi5iaezxgx.cloudfront.net/LA7/CLN/HLS-B/Live_1280x720_.m3u8"
 alias wget=wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"
+alias r="ranger"
+alias nord='print -P "┌──────────────┐\n│ %F{#2e3440}████%f #2e3440 │\n│ %F{#3b4252}████%f #3b4252 │\n│ %F{#434c5e}████%f #434c5e │\n│ %F{#4c566a}████%f #4c566a │\n│ %F{#d8dee9}████%f #d8dee9 │\n│ %F{#e5e9f0}████%f #e5e9f0 │\n│ %F{#eceff4}████%f #eceff4 │\n│ %F{#8fbcbb}████%f #8fbcbb │\n│ %F{#88c0d0}████%f #88c0d0 │\n│ %F{#81a1c1}████%f #81a1c1 │\n│ %F{#5e81ac}████%f #5e81ac │\n│ %F{#bf616a}████%f #bf616a │\n│ %F{#d08770}████%f #d08770 │\n│ %F{#ebcb8b}████%f #ebcb8b │\n│ %F{#a3be8c}████%f #a3be8c │\n│ %F{#b48ead}████%f #b48ead%f │\n└──────────────┘"'
 
 # SSH agent
 SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"

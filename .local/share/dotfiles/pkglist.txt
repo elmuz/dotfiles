@@ -6,6 +6,7 @@ gammastep
 grim
 i3status
 less
+lf
 mpv
 neofetch
 neovim
