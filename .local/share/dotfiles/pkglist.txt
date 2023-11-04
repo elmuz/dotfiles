@@ -32,6 +32,7 @@ ttf-firacode-nerd
 ttf-font-awesome
 ttf-hack-nerd-font
 ttf-linux-libertine
+ttf-tinos-nerd
 wireplumber
 wl-clipboard
 wlroots
