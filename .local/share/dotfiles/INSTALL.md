@@ -6,12 +6,25 @@ These notes are oriented to consistency (i.e. each new system should provide the
 
 I am fan and a long-time user of Arch Linux. So these notes will probably only work on this distribution (or a derivative of it).
 
-## Install the desktop environment and its configuration
-
+## Notes on the system installation
 At this point we assume that you have installed a very essential system. In particular:
 - you have completed the wiki [installation guide](https://wiki.archlinux.org/title/Installation_guide) (i.e. partitions, `pacstrap` command, bootloader, etc).
+```shell
+# Remember to add (at least) `iwd` in the pacstrap command, e.g.:
+pacstrap -K /mnt base base-devel linux linux-firmware iwd
+```
+-  Network is working properly. Create/edit `/etc/iwd/main.conf `by adding:
+```shell
+[General]
+EnableNetworkConfiguration=true
+
+[Network]
+NameResolvingService=systemd
+
+```
 - You have created your own user, with sudo privileges.
 
+## Install the desktop environment and its configuration
 The next script will take care of the management of AUR repository (by building `paru`), it will install *zsh* and its plugins and finally it will setup and configure [Sway](https://swaywm.org/) desktop environment (with all the [Nord](https://www.nordtheme.com/docs/colors-and-palettes) themes).
 
 _NOTE: never trust an external script (like this one). Read it carefully before executing it blindly._
