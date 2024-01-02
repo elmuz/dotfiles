@@ -93,9 +93,10 @@ sudo mkinitcpio -P
 
 ### Firefox
 - *Profile-sync-daemon*d.  It's enough to enable and start `psd` with `systemctl --user {enable,start} psd`.
-- Move disk cache to RAM. Open `about:config` and set `browser.cache.disk.parent_directory` to `/run/user/[UID]/firefox`,
-  where `UID` is your user's ID which can be obtained by running `id -u`. Open `about:cache` to verify the new disk cache
-  location. 
+- Move disk cache to RAM.
+  +  Open `about:config` and set `browser.cache.disk.parent_directory` to `/run/user/[UID]/firefox`, where `UID` is your user's ID which can be obtained by running `id -u`.
+  + Restart Firefox and go to `about:cache` to verify the new disk cache location.
+- Hardware acceleration: set `media.hardware-video-decoding.force-enabled` to `true`. Verify that `vainfo` is working fine (you may need to fix `LIBVA_DRIVER_NAME` variable).
 
 ### Wallpapers
 Place your images in `~/Pictures`, in particular the following are hard-coded in Sway configuration file:

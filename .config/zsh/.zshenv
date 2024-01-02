@@ -55,4 +55,4 @@ export EDITOR="nvim"
 export VISUAL="nvim"
 
 # LIBVA
-export LIBVA_DRIVER_NAME="iHD"
+export LIBVA_DRIVER_NAME="radeonsi"
