@@ -38,6 +38,12 @@ Verify that `x86-64-v3` is supported by checking:
 /lib/ld-linux-x86-64.so.2 --help
 ```
 
+There's some strange issue regarding PGP signature verification. In order to fix this, you need to manually import the key by doing:
+```bash
+curl https://somegit.dev/ALHP/alhp-keyring/raw/branch/master/master/anonfunc.asc -o anonfunc.asc
+gpg --import anonfunc.asc 
+```
+
 Install the keyring and the mirrorlist:
 
 ```bash
@@ -63,6 +69,17 @@ Update package database and upgrade:
 ```shell
 pacman -Suy
 ```
+
+## Optimized binaries build
+Edit `/etc/makepkg.conf` with the following arguments:
+```
+# Remove `-mtune` flag and replace `-march`
+CFLAGS="-march=native -O2 -pipe ..."
+...
+RUSTFLAGS="-C opt-level=2 -C target-cpu=native"
+```
+
+
 
 ## Graphics
 If system is based on modern Intel hardware you can enable GuC / HuC firmware loading (see [this](https://wiki.archlinux.org/title/Intel_graphics#Enable_GuC_/_HuC_firmware_loading) ArchLinux wiki page for details).

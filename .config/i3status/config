@@ -44,12 +44,10 @@ battery 1 {
         status_bat = "󰁽"
         status_unk = "󰂃"
         status_full = "󰁹"
-        path = "/sys/class/power_supply/BAT0/uevent"
+        path = "/sys/class/power_supply/BAT1/uevent"
         low_threshold = 10
 	threshold_type = percentage
 	last_full_capacity = true
-#        format = "%status %percentage %remaining"
-#        path = "/sys/class/power_supply/BAT0/uevent"
 }
 
 #run_watch DHCP {

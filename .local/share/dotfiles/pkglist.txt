@@ -5,6 +5,7 @@ fuzzel
 gammastep
 grim
 i3status
+jq
 less
 lf
 mpv
