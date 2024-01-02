@@ -1,0 +1,5 @@
+# See here: https://wiki.archlinux.org/title/Hardware_video_acceleration
+# Set: LIBVA_DRIVER_NAME=radeonsi
+amd-ucode
+libva-mesa-driver
+libva-utils

@@ -1,5 +1,6 @@
 alacritty
 btop
+btrfs-progs
 firefox
 fuzzel
 gammastep
@@ -12,6 +13,7 @@ mpv
 neofetch
 neovim
 neovim-symlinks
+ntfsprogs-ntfs3
 papirus-icon-theme
 pavucontrol
 pipewire
