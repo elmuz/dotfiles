@@ -1,4 +1,6 @@
 alacritty
+bluez
+bluez-utils
 btop
 btrfs-progs
 firefox

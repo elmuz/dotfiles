@@ -9,19 +9,26 @@ I am fan and a long-time user of Arch Linux. So these notes will probably only w
 ## Notes on the system installation
 At this point we assume that you have installed a very essential system. In particular:
 - you have completed the wiki [installation guide](https://wiki.archlinux.org/title/Installation_guide) (i.e. partitions, `pacstrap` command, bootloader, etc).
-```shell
-# Remember to add (at least) `iwd` in the pacstrap command, e.g.:
-pacstrap -K /mnt base base-devel linux linux-firmware iwd
-```
--  Network is working properly. Create/edit `/etc/iwd/main.conf `by adding:
-```shell
-[General]
-EnableNetworkConfiguration=true
-
-[Network]
-NameResolvingService=systemd
-
-```
+	```shell
+	# Remember to add (at least) `iwd` in the pacstrap command, e.g.:
+	pacstrap -K /mnt base base-devel linux linux-firmware iwd
+	```
+-  Network is working properly.
+   + Create/edit `/etc/iwd/main.conf `by adding:
+		```shell
+		[General]
+		EnableNetworkConfiguration=true
+		
+		[Network]
+		NameResolvingService=systemd
+		
+		```
+	+ Start/enable network services
+		```shell
+		systemctl start systemd-resolved
+		systemctl start iwd
+		```
+	
 - You have created your own user, with sudo privileges.
 
 ## Install the desktop environment and its configuration
