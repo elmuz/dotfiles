@@ -1,9 +1,15 @@
+# Sway specific variables
 XDG_CURRENT_DESKTOP=sway
 
+# Wayland specific variables
 _JAVA_AWT_WM_NONREPARENTING=1
 QT_AUTO_SCREEN_SCALE_FACTOR=1
 QT_QPA_PLATFORM="wayland;xcb"
 QT_WAYLAND_DISABLE_WINDOWDECORATION=1
 GDK_BACKEND=wayland
-
 MOZ_ENABLE_WAYLAND=1
+
+# Framework laptop specific variables
+LIBVA_DRIVER_NAME=radeonsi
+RADV_PERFTEST=video_decode
+WLR_RENDERER=vulkan

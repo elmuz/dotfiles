@@ -50,7 +50,7 @@ cursor = "#d8dee9"
 text = "#2e3440"
 
 [font]
-size = 14.0
+size = 13.0
 
 [font.offset]
 x = 0
