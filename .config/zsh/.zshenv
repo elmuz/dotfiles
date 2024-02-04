@@ -18,7 +18,11 @@ typeset -U path PATH
 path=(~/.local/bin $path)
 export PATH
 
-#export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
+# XDG System dirs
+export XDG_DATA_DIRS="${XDG_DATA_HOME}/flatpak/exports/share:/usr/local/share:/usr/share:/var/lib/flatpak/exports/share"
+export XDG_CONFIG_DIRS="/etc/xdg"
+
+# export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
 export ANSIBLE_CONFIG="${XDG_CONFIG_HOME}/ansible/ansible.cfg"
 export ANSIBLE_GALAXY_CACHE_DIR="${XDG_CACHE_HOME}/ansible/galaxy_cache"
 export ANSIBLE_HOME="${XDG_DATA_HOME}/ansible"
