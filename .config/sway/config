@@ -152,7 +152,7 @@ default_border pixel 3
 #default_floating_border none
 
 # Gaps
-gaps inner 15
+gaps inner 12
 
 # Switch to workspace
 bindsym $mod+1 workspace $wp1

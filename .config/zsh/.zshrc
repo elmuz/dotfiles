@@ -84,13 +84,6 @@ bindkey '^H' backward-kill-word
 # TERM
 export TERM="xterm-256color"
 
-# Preferred browser for Xorg and headless sessions
-if [ -n "$DISPLAY" ]; then
-  export BROWSER="firefox"
-    else 
-  export BROWSER="links"
-fi
-
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -98,10 +91,10 @@ fi
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# Aliases
+alias zrc="vim $XDG_CONFIG_HOME/zsh/.zshrc"
+alias zenv="vim $XDG_CONFIG_HOME/zsh/.zshenv"
 alias act="source venv/bin/activate"
 alias swayconf="vim $XDG_CONFIG_HOME/sway/config"
 alias la7="mpv https://d15umi5iaezxgx.cloudfront.net/LA7/CLN/HLS-B/Live_1280x720_.m3u8"
