@@ -34,18 +34,28 @@ paru -S --needed --noconfirm - < ~/.local/share/dotfiles/pkglist.txt
 
 # Extra cosmetics (e.g. themes and cursors)
 NORDIC_VERS="2.2.0"
+NORDIC_THEME="Nordic-bluish-accent"
+NORDIC_ICON_THEME="Nordic"
 cd /tmp
-curl -fLo nordic.tar.xz https://github.com/EliverLara/Nordic/releases/download/v$NORDIC_VERS/Nordic.tar.xz
+curl -fLo nordic.tar.xz https://github.com/EliverLara/Nordic/releases/download/v$NORDIC_VERS/$NORDIC_THEME.tar.xz
 tar xaf nordic.tar.xz
-mkdir $XDG_DATA_HOME/themes
-mv Nordic $XDG_DATA_HOME/themes/
+mkdir -p $XDG_DATA_HOME/themes
+mv $NORDIC_THEME $XDG_DATA_HOME/themes/
 rm nordic.tar.xz
+
+# Folder icons (other icons inherited from Papirus)
+tar xvf .local/share/dotfiles/Nordic-Folders.tar.xz
+mkdir -p $XDG_DATA_HOME/icons
+mv Nordic-Folders/$NORDIC_ICON_THEME $XDG_DATA_HOME/icons/
+rm -r Nordic-Folders
+
+# Build Nordic cursors
 paru -S --needed --noconfirm inkscape xorg-xcursorgen
 curl -fLo nordic.tar.gz https://github.com/EliverLara/Nordic/archive/refs/tags/v$NORDIC_VERS.tar.gz
 tar xaf nordic.tar.gz
 cd Nordic-$NORDIC_VERS/kde/cursors
 sh build.sh
-mkdir $XDG_DATA_HOME/icons
+mkdir -p $XDG_DATA_HOME/icons
 mv Nordic-cursors $XDG_DATA_HOME/icons/
 cd $HOME
 rm -rf /tmp/Nordic*

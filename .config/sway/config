@@ -272,6 +272,9 @@ bar {
 }
 
 
+# Xwayland
+# xwayland disable
+
 ########### Application-specific mods #############
 # Force some windows to be in floating mode
 for_window [title="About Mozilla Firefox"] floating enable
@@ -307,7 +310,10 @@ bindsym XF86MonBrightnessUp exec "xbacklight -inc 10"
 bindsym XF86MonBrightnessDown exec "xbacklight -dec 10"
 
 # This line avoids delay for GTK+ apps (e.g Firefox)
-exec systemctl --user import-environment
+exec systemctl --user import-environment DISPLAY \
+                                         SWAYSOCK \
+                                         WAYLAND_DISPLAY \
+                                         XDG_CURRENT_DESKTOP
 
 # Appearance. The best way to apply a GTK theme is to pass via `gsettings`.
 # This script parses the configuration files and applies theme/font/cursor/icon.

@@ -12,5 +12,5 @@ MOZ_ENABLE_WAYLAND=1
 # Framework laptop specific variables
 LIBVA_DRIVER_NAME=radeonsi
 RADV_PERFTEST=video_decode
-WLR_RENDERER=vulkan
-#WLR_RENDERER=gles2
+#WLR_RENDERER=vulkan
+WLR_RENDERER=gles2

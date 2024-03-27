@@ -31,6 +31,8 @@ export AWS_CONFIG_FILE="$XDG_CONFIG_HOME"/aws/config
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
 export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
 export DVDCSS_CACHE="$XDG_DATA_HOME"/dvdcss
+export GDK_SCALE=1
+export GDK_DPI_SCALE=1
 export GNUPGHOME="$XDG_DATA_HOME"/gnupg
 export GTK_RC_FILES="$XDG_CONFIG_HOME"/gtk-1.0/gtkrc
 export GTK_THEME="$(grep 'gtk-theme-name' "$XDG_CONFIG_HOME/gtk-3.0/settings.ini" | sed 's/.*\s*=\s*//')"
