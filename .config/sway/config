@@ -251,26 +251,6 @@ assign [app_id="zoom"] → $wp9
 # client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color  $bg-color
 # client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color  $bg-color
 # client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color           $bg-color
-bar {
-	id 1
-	position bottom
-	output $CENTER
-  	status_command i3status --config $XDG_CONFIG_HOME/i3status/config
-	colors {
-		background $transparent
-	    	separator #75757500
-		#                  border             background         text
-		focused_workspace  $transparent       $transparent       $text-color
-		active_workspace   $transparent       $transparent       $text-color
-		inactive_workspace $transparent       $transparent       $text-color
-		urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
-	}
-	font pango:Hack Nerd Font 12
-	strip_workspace_numbers yes
-	gaps 0 5 5 5
-	separator_symbol "  "
-}
-
 
 # Xwayland
 # xwayland disable
@@ -294,6 +274,12 @@ for_window [app_id="wdisplays"] floating enable, resize set 960 480
 for_window [app_id="blueberry.py"] floating enable, resize set 480 640
 
 #######################################################
+
+# Add bar
+bar {
+  swaybar_command waybar
+  workspace_buttons yes
+}
 
 # Apply redshift
 exec gammastep -m wayland
