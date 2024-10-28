@@ -1,3 +1,4 @@
 gtk-icon-theme-name = "Nordic"
 gtk-theme-name = "Nordic-bluish-accent"
 gtk-font-name = "Sans 10"
+gtk-cursor-theme-name = "Nordic-cursors"
