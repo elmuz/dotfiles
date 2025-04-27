@@ -7,6 +7,12 @@ firefox
 fuzzel
 gammastep
 grim
+hyprcursor
+hyprland
+hyprlang
+hyprlock
+hyprpaper
+hyprutils
 i3status
 jq
 less
@@ -41,8 +47,9 @@ ttf-tinos-nerd
 wireplumber
 wl-clipboard
 wlroots
-xdg-desktop-portal-wlr
+xdg-desktop-portal-hyprland
 xdg-desktop-portal-gtk
+xdg-desktop-portal-wlr
 xorg-xwayland
 yadm
 zathura

@@ -14,3 +14,4 @@ LIBVA_DRIVER_NAME=radeonsi
 RADV_PERFTEST=video_decode
 #WLR_RENDERER=vulkan
 WLR_RENDERER=gles2
+#GSK_RENDERER=ngl
