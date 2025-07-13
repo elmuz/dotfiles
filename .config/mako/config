@@ -1,0 +1,31 @@
+# ─── General ─────────────────────────────────────────
+background-color=#3B4252
+text-color=#e5e9f0
+border-color=#88C0D0
+border-size=2
+border-radius=6
+padding=12
+margin=12
+
+width=400
+height=100
+default-timeout=5000
+font=Fira Sans 10
+icons=1
+
+# ─── Urgency Colors ─────────────────────────────────
+[urgency=low]
+border-color=#EBCB8B
+text-color=#e5e9f0
+background-color=#3B4252
+
+[urgency=normal]
+border-color=#d08770
+text-color=#e5e9f0
+background-color=#3B4252
+
+[urgency=high]
+border-color=#BF616A
+text-color=#e5e9f0
+background-color=#3B4252
+

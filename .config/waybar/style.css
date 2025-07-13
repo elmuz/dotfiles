@@ -91,7 +91,6 @@
     transition: none;
     color: #a3be8c;
     background: transparent;
-    font-size: 4px;
   }
   
   #workspaces button.focused {
@@ -117,7 +116,7 @@
     background: #2e3440;
   }
   
-  #pulseaudio {
+  #wireplumber {
     margin-top: 6px;
     margin-left: 12px;
     border-radius: 8px;

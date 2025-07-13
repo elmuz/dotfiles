@@ -1,32 +1,23 @@
 // -*- mode: jsonc -*-
 {
 	"layer": "top",
-	"modules-left": ["custom/powermenu", "hyprland/workspaces", "cpu", "memory", "temperature"],
-	"modules-center": ["hyprland/window"],
-	"modules-right": ["pulseaudio", "battery", "backlight", "custom/wl-gammarelay-temperature", "clock", "network"],
+	"modules-left": ["custom/powermenu", "niri/workspaces", "cpu", "memory", "temperature"],
+	"modules-center": ["niri/window"],
+	"modules-right": ["wireplumber", "battery", "backlight", "custom/wl-gammarelay-temperature", "clock", "network"],
 	"custom/wl-gammarelay-temperature": {
 		"format": "󱩌 {}",
 		"exec": "wl-gammarelay-rs watch {t}",
 		"on-scroll-up": "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n +100",
 		"on-scroll-down": "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n -100"
 	},
-	"pulseaudio": {
+	"wireplumber": {
 		"tooltip": false,
-		"scroll-step": 5,
+		"scroll-step": 3,
 		"format": "{icon} {volume}%",
-		"format-muted": "  ",
-		"format-bluetooth": "{icon} {volume}%",
-		"on-click":"amixer -D pulse sset Master toggle",
-		"scroll-step": 5,
-		"format-icons": {
-			"headphone": "",
-			"hands-free": "󱖡",
-			"headset": "󰋋 ",
-			"phone": "",
-			"portable": "",
-			"car": "",
-			"default": ["󰝟", "󰕿", "󰖀", "󰕾"]
-		}
+		"format-muted": "󰝟",
+		"max-volume": 100,
+		"on-click":"wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+		"format-icons": ["󰝟", "󰕿", "󰖀", "󰕾"]
 	},
 	"custom/powermenu": {
 		"format": "",
@@ -35,21 +26,19 @@
 		"tooltip": false,
 		"signal": 8
 	},
-	"hyprland/workspaces": {
-        	"disable-scroll-wraparound": true,
-		"disable-scroll": false,
-		"all-outputs": true,
+	"niri/workspaces": {
 		"tooltip": false,
-		"format": "{name}: {icon}",
+		"format": "{icon}",
 		"format-icons": {
-			"2": "",
-			"1": "󰈹",
-			"3": "󰝚",
-			"5": "",
-			"4": "",
-			"urgent": "",
-			"focused": "",
-			"default": ""
+			"two": "",
+			"one": "🌎",
+			"three": "",
+			"4": "",
+			"5": "",
+			"6": "",
+			"7": "",
+			"8": "",
+			"9": ""
 		}
 	},
 	"temperature": {
@@ -59,16 +48,11 @@
 		// "format-critical": "{temperatureC}°C ",
 		"format": "{temperatureC}°C "
 	},
-	"hyprland/window": {
+	"niri/window": {
 		"format": "{}",
-		"max-length": 50,
-		"rewrite": {
-			"Mozilla Firefox": " 󰈹 ",
-			"(.*) — Mozilla Firefox": "$1 — 󰈹 ",
-			"(.*) - Youtube — Mozilla Firefox": "$1 — 󰗃 ",
-			"(.*) - waybarprefix": "$1 —  ",
-			"(.*) - NVIM": "$1 —  "
-		}
+		"icon": true,
+		"icon-size": 14,
+		"max-length": 50
 	},
 	"backlight": {
 		"device": "amdgpu_bl1",
