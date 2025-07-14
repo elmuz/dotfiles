@@ -94,8 +94,14 @@ output "eDP-1" {
     // so to put another output directly adjacent to it on the right, set its x to 1920.
     // If the position is unset or results in an overlap, the output is instead placed
     // automatically.
-    //position x=1280 y=0
+    position x=3072 y=1151
     backdrop-color "#2e3440"
+}
+
+output "PNP(YEY) YMG-4K32-01 demoset-1" {
+    mode "3840x2160@59.982"
+    scale 1.25
+    position x=0 y=0
 }
 
 // Settings that influence how windows are positioned and sized.
@@ -360,9 +366,15 @@ window-rule {
 }
 
 // Workspaces
-workspace "one"
-workspace "two"
-workspace "three"
+workspace "one" {
+    open-on-output "PNP(YEY) YMG-4K32-01 demoset-1"
+}
+workspace "two" {
+    open-on-output "PNP(YEY) YMG-4K32-01 demoset-1"
+}
+workspace "three" {
+    open-on-output "PNP(YEY) YMG-4K32-01 demoset-1"
+}
 
 binds {
     // Keys consist of modifiers separated by + signs, followed by an XKB key name
