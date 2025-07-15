@@ -606,6 +606,8 @@ binds {
     // Mod+Space       { switch-layout "next"; }
     // Mod+Shift+Space { switch-layout "prev"; }
 
+    // Window switcher
+    Mod+Tab { spawn "/home/alessio/.config/fuzzel/app_switch.py"; }
     // Overview
     Mod+H { toggle-overview; }
     

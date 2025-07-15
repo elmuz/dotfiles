@@ -1,10 +1,10 @@
 #!/bin/bash
  
-lock=" Lock"
-logout=" Logout"
-shutdown=" Shutdown"
-reboot=" Reboot"
-sleep=" Suspend"
+lock="  Lock"
+logout="  Logout"
+shutdown="  Shutdown"
+reboot="  Reboot"
+sleep="  Suspend"
  
 selected_option=$(echo "$lock
 $logout

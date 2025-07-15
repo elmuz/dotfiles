@@ -13,10 +13,11 @@
   },
   "autosave": "on_focus_change",
   "ui_font_family": "Fira Sans",
-  "ui_font_fallbacks": ["Nerd Font"],
+  "ui_font_fallbacks": ["DejaVu Sans"],
   "ui_font_size": 16,
   "buffer_font_family": "FiraCode Nerd Font",
   "buffer_font_size": 16,
+  "enable_language_server": true,
   "theme": {
     "mode": "system",
     "light": "One Light",
@@ -26,5 +27,14 @@
     "mode": "system",
     "light": "Light Icon Theme",
     "dark": "Dark Icon Theme"
+  },
+  "languages": {
+    "Python": {
+      "formatter": "language_server",
+      "language_servers": ["python-lsp-server", "ruff"]
+    }
+  },
+  "lsp": {
+    "python-lsp-server": {}
   }
 }
