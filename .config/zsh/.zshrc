@@ -106,3 +106,5 @@ alias nord='print -P "┌──────────────┐\n│ %F{#
 
 # SSH agent
 SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+
+. "$HOME/.local/share/../bin/env"

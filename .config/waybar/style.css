@@ -1,7 +1,7 @@
 * {
     border: none;
     border-radius: 3px;
-    font-family: FontAwesome, sans-serif;
+    font-family: "Font Awesome 7 Free", sans-serif;
     font-size: 14px;
   }
   
@@ -252,5 +252,15 @@
     transition: none;
     padding: 0 20px 0 20px;
     color: #a3be8c;
+    background: #2e3440;
+}
+
+#power-profiles-daemon{
+    margin-top: 6px;
+    margin-left: 6px;
+    border-radius: 8px;
+    transition: none;
+    padding: 10px 10px;
+    color: #88c0d0;
     background: #2e3440;
 }

@@ -1,7 +1,7 @@
 // -*- mode: jsonc -*-
 {
 	"layer": "top",
-	"modules-left": ["custom/powermenu", "niri/workspaces", "cpu", "memory", "temperature"],
+	"modules-left": ["custom/powermenu", "niri/workspaces", "memory", "temperature", "power-profiles-daemon"],
 	"modules-center": ["niri/window"],
 	"modules-right": ["wireplumber", "battery", "backlight", "custom/wl-gammarelay-temperature", "clock", "network"],
 	"custom/wl-gammarelay-temperature": {
@@ -31,7 +31,7 @@
 		"format": "{icon}",
 		"format-icons": {
 			"two": "",
-			"one": "🌎",
+			"one": "",
 			"three": "",
 			"4": "",
 			"5": "",
@@ -104,5 +104,17 @@
 		"tooltip-format-ethernet": "{ipaddr}",
 		"tooltip-format-disconnected": "Disconnected",
 		"max-length": 50
+	},
+	"power-profiles-daemon": {
+		"format": "{icon}",
+		"tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+		"tooltip": true,
+		"format-icons": {
+			"default": "",
+			"performance": "",
+			"balanced": "",
+			"power-saver": ""
+		}
 	}
 }
+
