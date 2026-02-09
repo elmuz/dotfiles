@@ -7,21 +7,13 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "base_keymap": "SublimeText",
-  "telemetry": {
-    "metrics": false
-  },
   "autosave": "on_focus_change",
-  "ui_font_family": "Fira Sans",
-  "ui_font_fallbacks": ["DejaVu Sans"],
-  "ui_font_size": 16,
+  "base_keymap": "JetBrains",
   "buffer_font_family": "FiraCode Nerd Font",
   "buffer_font_size": 16,
   "enable_language_server": true,
-  "theme": {
-    "mode": "system",
-    "light": "One Light",
-    "dark": "One Dark"
+  "features": {
+    "edit_prediction_provider": "zed"
   },
   "icon_theme": {
     "mode": "system",
@@ -36,5 +28,16 @@
   },
   "lsp": {
     "python-lsp-server": {}
-  }
+  },
+  "telemetry": {
+    "metrics": false
+  },
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "Nord Dark"
+  },
+  "ui_font_family": "Fira Sans",
+  "ui_font_fallbacks": ["DejaVu Sans"],
+  "ui_font_size": 16
 }

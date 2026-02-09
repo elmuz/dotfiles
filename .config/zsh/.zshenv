@@ -42,6 +42,7 @@ export LESSHISTFILE="$XDG_CACHE_HOME"/less/history
 export LESSKEY="$XDG_CONFIG_HOME"/less/lesskey
 export MACHINE_STORAGE_PATH="$XDG_DATA_HOME"/docker-machine
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
+export PASSWORD_STORE_DIR="$XDG_DATA_HOME"/pass
 export PYENV_ROOT=$XDG_DATA_HOME/pyenv
 export QT_QPA_PLATFORMTHEME=gtk2
 export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
@@ -55,7 +56,7 @@ export ZSH_COMPDUMP=$XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
 export ZSH="$XDG_DATA_HOME/oh-my-zsh"
 
 # Default programs
-export TERMINAL="alacritty"
+export TERM="alacritty"
 export BROWSER="firefox"
 export EDITOR="nvim"
 export VISUAL="nvim"

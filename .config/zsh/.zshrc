@@ -82,7 +82,7 @@ bindkey '^H' backward-kill-word
 # export LANG=en_US.UTF-8
 
 # TERM
-export TERM="xterm-256color"
+# export TERM="xterm-256color"
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"

@@ -10,7 +10,7 @@ selected_option=$(echo "$lock
 $logout
 $sleep
 $reboot
-$shutdown" | fuzzel --dmenu -w 8 -l 5 -x 80 --text-color eceff4aa)
+$shutdown" | fuzzel --dmenu -w 11 -l 5 -x 80 --text-color eceff4aa)
 
 if [ "$selected_option" == "$lock" ]
 then

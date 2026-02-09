@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=Fluent Reader
-Comment=Modern desktop RSS reader
-Exec=/opt/fluent-reader/fluent-reader --ozone-platform-hint=auto
-Terminal=false
-Type=Application
-Icon=fluent-reader
-Categories=Network;Internet

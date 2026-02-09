@@ -94,7 +94,7 @@ output "eDP-1" {
     // so to put another output directly adjacent to it on the right, set its x to 1920.
     // If the position is unset or results in an overlap, the output is instead placed
     // automatically.
-    position x=2887 y=1082
+    position x=2887 y=1000
     backdrop-color "#2e3440"
 }
 
@@ -273,7 +273,7 @@ layer-rule {
 // Additionally, clients will be informed that they are tiled, removing some client-side rounded corners.
 // This option will also fix border/focus ring drawing behind some semitransparent windows.
 // After enabling or disabling this, you need to restart the apps for this to take effect.
-// prefer-no-csd
+prefer-no-csd
 
 // You can change the path where screenshots are saved.
 // A ~ at the front will be expanded to the home directory.
@@ -638,6 +638,37 @@ binds {
     // Mod+Shift+P { power-off-monitors; }
 }
 
+recent-windows {
+    // off
+    debounce-ms 750
+
+    open-delay-ms 150
+
+    highlight {
+        active-color "#999999ff"
+        urgent-color "#ff9999ff"
+        padding 30
+        corner-radius 2
+    }
+
+    previews {
+        max-height 480
+        max-scale 0.5
+    }
+
+    binds {
+        Alt+Tab         { next-window; }
+        Alt+Shift+Tab   { previous-window; }
+        Alt+grave       { next-window     filter="app-id"; }
+        Alt+Shift+grave { previous-window filter="app-id"; }
+
+        Mod+Tab         { next-window; }
+        Mod+Shift+Tab   { previous-window; }
+        Mod+grave       { next-window     filter="app-id"; }
+        Mod+Shift+grave { previous-window filter="app-id"; }
+    }
+}
+
 // Disable the hot corners.
 gestures {
     hot-corners {
@@ -654,11 +685,12 @@ environment {
     SDL_VIDEODRIVER "wayland"
     CLUTTER_BACKEND "wayland"
     RADV_PERFTEST "video_decode"
-    DISPLAY ":0"
 }
 
-prefer-no-csd
+cursor {
+    xcursor-theme "Nordic-cursors"
+    xcursor-size 24
+}
 
 spawn-at-startup "waybar"
 spawn-at-startup "swww-daemon"
-spawn-at-startup "xwayland-satellite"
