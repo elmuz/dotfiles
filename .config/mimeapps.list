@@ -13,6 +13,7 @@ image/png=swayimg.desktop
 image/jpeg=swayimg.desktop
 video/matroska=mpv.desktop
 video/x-matroska=mpv.desktop
+x-scheme-handler/jetbrains=jetbrainsd.desktop
 
 [Added Associations]
 x-scheme-handler/http=firefox.desktop;

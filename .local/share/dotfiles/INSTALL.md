@@ -52,7 +52,7 @@ The variable `$GNUPGHOME` is defined during `INSTALL.sh` script.
 ## Optimized repositories
 If your system is somewhat recent, you can enable [ALHP](https://somegit.dev/ALHP/ALHP.GO) optimized repository.
 
-Verify that `x86-64-v3` is supported by checking:
+Verify that `x86-64-v3` (or `x86-64-v4`) is supported by checking:
 
 ```shell
 /lib/ld-linux-x86-64.so.2 --help
