@@ -48,7 +48,7 @@ This document assesses the current backup/recovery setup and outlines a strategy
 
 | Secret type | Where it lives | Status / Plan |
 |-------------|---------------|---------------|
-| Login / identity secrets | **Bitwarden** (self-hosted) | ✅ Browser-based |
+| Login / identity secrets | **Bitwarden** (self-hosted) | ✅ Out of DR scope — laptop is a client; server is external to this scenario |
 | SSH private keys | `~/.ssh/id_*.key` | 🔴 Local, encrypted in yadm; plan: migrate to GPG |
 | GPG key | `~/.local/share/gnupg/` | 🔴 **NOT covered by yadm encrypt** → must add backup |
 | AWS credentials | `~/.config/aws/credentials` | 🔴 Fix filename; add to yadm encrypt |
@@ -179,14 +179,14 @@ This document assesses the current backup/recovery setup and outlines a strategy
 
 ## 5. Action Plan — Phased Implementation
 
-### Phase 0: Hygiene (now)
-- [ ] `yadm add` + commit the 2 modified files
-- [ ] `git rm` charge-thresholds.service / charge-thresholds.sh
-- [ ] Remove charge-thresholds from INSTALL.sh
-- [ ] Fix `~/.config/aws/credentials,` → `credentials`
-- [ ] Add GPG key material to yadm encrypt (`.local/share/gnupg/*`) or document backup
-- [ ] Clean `gnome-keyring` line from portal config
-- [ ] Remove `fuzzel-rbw` from pkglist
+### Phase 0: Hygiene (DONE ✅)
+- [x] `yadm add` + commit the 2 modified files
+- [x] `git rm` charge-thresholds.service / charge-thresholds.sh
+- [x] Remove charge-thresholds from INSTALL.sh + INSTALL.md
+- [x] Fix `~/.config/aws/credentials,` → `credentials` (+ zshenv)
+- [x] Add GPG key material to yadm encrypt (private-keys-v1.d + revocs)
+- [x] Clean `gnome-keyring` line from portal config
+- [x] Remove `fuzzel-rbw` from pkglist (wasn't in any list — noted only)
 
 ### Phase 1: Curated package list (review as you go)
 - [ ] Start from the essential list: `niri waybar kitty mako fuzzel aww brightnessctl wl-gammarelay-rs swaylock grim slurp xwayland-satellite pipewire wireplumber`
