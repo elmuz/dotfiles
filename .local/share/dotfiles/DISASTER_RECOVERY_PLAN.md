@@ -220,7 +220,7 @@ This document assesses the current backup/recovery setup and outlines a strategy
 - [x] `backup-to-external-hdd.sh` upgraded: now actually runs rsnapshot (mount/config checks)
 - [x] **NEW** `restore-from-backup.sh`: selective full restore after recreation — brings back user data + non-yadm configs, keeps fresh yadm clone/secrets, fixes ownership
 - [x] Full-restore path documented in INSTALL.md (backup + restore usage)
-- [ ] Optional: periodic backup timer (systemd timer or cron) for the HDD snapshot
+- [x] Periodic timer — **declined** (HDD not always attached; manual backup is intentional)
 - [ ] Ensure `~/Documents/last-will`, `~/tools/resume` git repos are pushed
 
 ### Phase 6: DR testing + living document
