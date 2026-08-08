@@ -131,3 +131,14 @@ the following packages are required for Qt to match Gtk2 style:
 
 ## Redshift
 - `gammastep` applied via sway config
+
+## What is NOT backed up (by design)
+These are intentionally excluded from the DR procedure — they are lightweight to re-create or restore from a remote source:
+- **Firefox profile** (`~/.mozilla/`) → synced via Mozilla account; restore from remote.
+- **PyCharm** → IDE profile synced online; not recreated (planned to move to Vim/FOSS IDE).
+- **Caches** (`~/.cache/awww`, etc.) → volatile; wallpaper re-set via `awww img ~/Pictures/wallpaper_C.jpg`.
+- **Bulk data** (`~/Videos ~/Music ~/Downloads`) → external HDD backup (rsnapshot).
+- **Manual one-off tools** (zed, aws-cli-v2, nebula-sync) → simple setup, not packaged.
+- **Fingerprint** (`fprintd`) → biometric, cannot be duplicated; re-enroll by hand.
+- **Identity / logins** → Bitwarden (self-hosted; external server, out of laptop DR scope).
+- **Auto-generated config noise** (window sizes, `qalc.history`, Thunar `accels.scm`) → not tracked.
