@@ -215,10 +215,13 @@ This document assesses the current backup/recovery setup and outlines a strategy
 - [ ] Add post-install checklist: fingerprint re-enroll, Bitwarden login, Firefox account sync, wallpaper set (`awww img ~/Pictures/wallpaper_C.jpg`)
 - [ ] Update docs to niri stack; remove Sway/Hyprland references
 
-### Phase 5: Backup strategy for data
-- [ ] rsnapshot for `~/Videos ~/Music ~/Downloads` → external HDD
+### Phase 5: Backup strategy + full-snapshot restore (DONE ✅)
+- [x] rsnapshot backs up `/home`, `/etc`, `/usr/local` → `/mnt/backups/arya/` (7 daily + 4 weekly + 12 monthly)
+- [x] `backup-to-external-hdd.sh` upgraded: now actually runs rsnapshot (mount/config checks)
+- [x] **NEW** `restore-from-backup.sh`: selective full restore after recreation — brings back user data + non-yadm configs, keeps fresh yadm clone/secrets, fixes ownership
+- [x] Full-restore path documented in INSTALL.md (backup + restore usage)
+- [ ] Optional: periodic backup timer (systemd timer or cron) for the HDD snapshot
 - [ ] Ensure `~/Documents/last-will`, `~/tools/resume` git repos are pushed
-- [ ] Make `backup-to-external-hdd.sh` actually run (currently just prints instructions)
 
 ### Phase 6: DR testing + living document
 - [ ] Quarterly test from ISO in a VM/spare disk
@@ -240,6 +243,9 @@ yadm decrypt
 git clone git@github.com:elmuz/xkcd-viewer ~/projects/xkcd-viewer
 (cd ~/projects/xkcd-viewer && cargo build --release)
 cp ~/projects/xkcd-viewer/target/release/xkcd-viewer ~/.local/bin/
+
+# 6b. OPTIONAL: full snapshot restore from the external HDD (if HDD mounted at /mnt):
+~/.local/share/dotfiles/restore-from-backup.sh      # brings back all user data
 
 # 7. Manual checklist:
 #    - Login to Bitwarden (self-hosted)

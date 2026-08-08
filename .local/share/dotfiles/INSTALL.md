@@ -132,6 +132,24 @@ the following packages are required for Qt to match Gtk2 style:
 ## Redshift
 - `gammastep` applied via sway config
 
+## Full restore from backup (bonus path)
+The minimal recreation above works from GitHub alone. For a **fuller restore**, the rsnapshot backup on the external HDD contains `/home`, `/etc`, `/usr/local` — i.e. everything, including the bulk data that recreation can't produce.
+
+### Backup (periodically, HDD mounted at `/mnt`)
+```shell
+sudo ~/.local/bin/backup-to-external-hdd.sh daily   # or: weekly / monthly
+```
+The rsnapshot config (`/etc/rsnapshot.conf`, tracked at `~/.config/rsnapshot/rsnapshot.conf`) keeps 7 daily + 4 weekly + 12 monthly snapshots of `/home/`, `/etc/`, `/usr/local/` under `/mnt/backups/arya/`.
+
+### Restore (after the minimal recreation)
+```shell
+# HDD mounted at /mnt, then:
+~/.local/share/dotfiles/restore-from-backup.sh        # newest daily.*
+# or pick a specific snapshot:
+~/.local/share/dotfiles/restore-from-backup.sh daily.2
+```
+The script restores user data + non-yadm configs, **keeps** the fresh GitHub-cloned yadm setup and re-decrypted secrets, and fixes ownership. It deliberately skips caches and `~/snapshots`.
+
 ## What is NOT backed up (by design)
 These are intentionally excluded from the DR procedure — they are lightweight to re-create or restore from a remote source:
 - **Firefox profile** (`~/.mozilla/`) → synced via Mozilla account; restore from remote.
