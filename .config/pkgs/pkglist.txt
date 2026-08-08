@@ -1,233 +1,178 @@
-accountsservice
-acpilight
-alacritty
-android-tools
-arandr
-arc-gtk-theme
-arc-icon-theme
-arc-solid-gtk-theme
-arch-wiki-lite
-aria2
-asp
-atool
-audacity
-autoconf
-automake
+# Curated package list — DR restore (draft, rev 2)
+# Only what is actually used + configured. Categories for readability.
+# Review before promoting to the authoritative pkglist.txt.
+# Install:  paru -S --needed --noconfirm - < pkglist.txt
+
+## --- Base / repos ---
 base
-binutils
-bison
-blender
-blueberry
-bluez-utils
-bmon
-bolt
-btop
-clamav
-ddcutil
-dhcpcd
-dialog
-dosfstools
-efibootmgr
-fakeroot
-feh
-ffmpeg
-firefox
-flatpak
-flex
-gammastep
-gcc
-ghostscript
-gimp
-git
-git-filter-repo
-git-lfs
-glfw-wayland
-gnome-themes-extra
-groff
-grub
-gsfonts
-htop
-hunspell
-hunspell-en_us
-hunspell-it
-i3-gaps
-i3blocks
-i3lock
-i3status
-imv
-intel-gpu-tools
-intel-media-driver
-intel-ucode
-iwd
-libreoffice-fresh
-libtool
-libva-utils
-libxkbcommon-x11
-links
+base-devel
 linux
 linux-firmware
-linux-headers
 linux-lts
 linux-lts-headers
-lsof
-m4
-maim
-make
-man-db
-man-pages
-mesa-demos
-monero-gui
-mpv
-neofetch
-neovim
-netctl
-ntfs-3g
-openvpn
-p7zip
-pacman-contrib
-patch
-pavucontrol
+alhp-keyring
+alhp-mirrorlist
+
+## --- Core DE (niri/Wayland stack) ---
+niri
+waybar
+kitty
+mako
+fuzzel
+awww
+swaylock
+grim
+slurp
+xwayland-satellite
+wl-clipboard
+brightnessctl
+wl-gammarelay-rs
+power-profiles-daemon
 pipewire
 pipewire-alsa
-pipewire-media-session
+pipewire-jack
 pipewire-pulse
-pkgconf
-podman
-profile-sync-daemon
-progress
-pyside2
-python-black
-python-isort
-python-joblib
-python-virtualenv
-qalculate-gtk
-qt5-3d
-qt5-base
-qt5-charts
-qt5-connectivity
-qt5-datavis3d
-qt5-declarative
-qt5-doc
-qt5-examples
-qt5-gamepad
-qt5-graphicaleffects
-qt5-imageformats
-qt5-location
-qt5-lottie
-qt5-multimedia
-qt5-networkauth
-qt5-purchasing
-qt5-quick3d
-qt5-quickcontrols
-qt5-quickcontrols2
-qt5-quicktimeline
-qt5-remoteobjects
-qt5-script
-qt5-scxml
-qt5-sensors
-qt5-serialbus
-qt5-serialport
-qt5-speech
-qt5-svg
-qt5-tools
-qt5-translations
-qt5-virtualkeyboard
-qt5-wayland
-qt5-webchannel
-qt5-webengine
-qt5-webglplugin
-qt5-websockets
-qt5-webview
-qt5-x11extras
-qt5-xmlpatterns
-qt5ct
-qt6-3d
-qt6-5compat
-qt6-base
-qt6-declarative
-qt6-doc
-qt6-examples
-qt6-imageformats
-qt6-networkauth
-qt6-quick3d
-qt6-quicktimeline
-qt6-shadertools
-qt6-svg
-qt6-tools
-qt6-translations
-qt6-wayland
-ranger
-reflector
-rofi
-rxvt-unicode-terminfo
-sccache
-shotcut
-slurp
-sudo
-sway
-swayidle
-systemd-resolvconf
-systemd-swap
-texinfo
-texlive-bibtexextra
-texlive-core
-texlive-fontsextra
-texlive-formatsextra
-texlive-games
-texlive-humanities
-texlive-latexextra
-texlive-music
-texlive-pictures
-texlive-pstricks
-texlive-publishers
-texlive-science
-texworks
-thermald
-tor
+wireplumber
+gst-plugin-pipewire
+xdg-desktop-portal-gtk
+xdg-desktop-portal-wlr
+polkit-kde-agent
+iwd
+blueman
+bluez
+bluez-utils
+
+## --- Theming / Qt-GTK ---
+gtk-engine-murrine
+qt5-styleplugins
+qt6gtk2
+qt6ct
+papirus-icon-theme
+nwg-look
+
+## --- Fonts ---
+otf-font-awesome
 ttf-cascadia-code
 ttf-croscore
-ttf-dejavu
-ttf-fira-sans
 ttf-firacode-nerd
-ttf-font-awesome
-ttf-ibm-plex
-ttf-liberation
-usbutils
-vulkan-intel
-wget
-which
-wireguard-tools
-wl-clipboard
-wlroots
-wofi
-wpa_supplicant
-xbindkeys
-xclip
-xcompmgr
-xdg-desktop-portal
-xdg-desktop-portal-wlr
-xf86-video-fbdev
-xf86-video-intel
-xf86-video-vesa
-xorg-font-util
-xorg-fonts-100dpi
-xorg-fonts-75dpi
-xorg-fonts-alias-100dpi
-xorg-fonts-alias-75dpi
-xorg-fonts-misc
-xorg-fonts-type1
-xorg-mkfontscale
-xorg-server
-xorg-server-common
-xorg-xclipboard
-xorg-xdpyinfo
-xorg-xev
-xorg-xinit
-xorg-xwayland
-xournalpp
+ttf-fira-sans
+ttf-linux-libertine
+ttf-tinos-nerd
+
+## --- AMD graphics / firmware / hardware ---
+amd-ucode
+vulkan-radeon
+libva-utils
+mesa-utils
+amdgpu_top
+nvtop
+fwupd
+fw-ectool-git
+fprintd
+ddcutil
+sof-firmware
+
+## --- Shell & core utilities ---
+zsh
+git
+paru
 yadm
-youtube-dl
+btop
+fastfetch
+jq
+less
+unzip
+unrar
+wget
+ncdu
+
+## --- Editors ---
+neovim
+neovim-symlinks
+
+## --- File managers ---
+superfile
+ranger
+thunar
+
+## --- Media / viewers ---
+mpv
 zathura
 zathura-djvu
 zathura-pdf-mupdf
-zsh
+qalculate-gtk
+
+## --- Snapshot / backup ---
+snapper
+snapper-gui-git
+btrfs-progs
+rsnapshot
+smartmontools
+profile-sync-daemon
+
+## --- Applications (confirm each) ---
+firefox
+ghostwriter
+gimp
+audacity
+handbrake
+makemkv
+mkvtoolnix-cli
+mediainfo
+dvdbackup
+libdvdcss
+freecad
+openscad
+xournalpp
+betterbird-bin
+qwen-code
+pi-coding-agent
+pavucontrol
+
+## --- Networking / VPN / security ---
+tailscale
+mullvad-vpn
+iwmenu-git
+nitrokey-app2
+
+## --- System / utilities ---
+man-db
+man-pages
+efibootmgr
+dosfstools
+xfsprogs
+cups
+
+## --- Dev / sysadmin ---
+ansible
+ansible-lint
+podman
+pre-commit
+prettier
+python-passlib
+python-gobject
+perl-image-exiftool
+
+## ============================================================
+## SUGGESTED REMOVALS (do NOT reinstall in DR)
+## --- superseded / legacy (pkg removed from list; configs stay tracked) ---
+# sway, swaybg, swayidle   -> use niri; keep swaylock only
+# gammastep, redshift      -> wl-gammarelay-rs supersedes
+# rofi                     -> fuzzel is the launcher
+# xbindkeys                -> keybindings live in niri config
+# feh                      -> legacy image viewer
+# i3-wm                    -> niri is the WM
+# fuzzel-rbw               -> dropped experiment
+# alacritty                -> kitty supersedes (config kept, possible return)
+# lf, mc                   -> packages not even installed; configs orphaned
+# xorg-xinit, xorg-xhost   -> X11 legacy, not needed on Wayland session
+# uwsm                     -> not used (custom niri-session script)
+# accountsservice, acpilight, arandr, arc-*, atool, arp-scan, bind,
+#   bmon, bolt, clamav, dhcpcd, dialog, ffmpeg, ghostscript, imv, maim,
+#   netctl, openvpn, systemd-swap, thermald, tor, wofi, xcompmgr,
+#   xf86-video-*, youtube-dl, ...   -> not in curated scope
+## --- apps no longer used (simple `pacman -S` if ever needed) ---
+# chromium, code, monero-gui, gnome-klotski, love, texlive-fonts*
+## --- one-off manual installs (NOT recreated; simple setup instead) ---
+# zed, aws-cli-v2, nebula-sync
+# pycharm -> online-synced profile; planned to be abandoned for Vim/FOSS IDE

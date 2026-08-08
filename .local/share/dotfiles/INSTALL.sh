@@ -30,7 +30,7 @@ makepkg --noconfirm -si
 
 # Install required packages
 cd $HOME
-paru -S --needed --noconfirm - < ~/.local/share/dotfiles/pkglist.txt
+paru -S --needed --noconfirm - < $XDG_CONFIG_HOME/pkgs/pkglist.txt
 
 # Extra cosmetics (e.g. themes and cursors)
 NORDIC_VERS="2.2.0"
