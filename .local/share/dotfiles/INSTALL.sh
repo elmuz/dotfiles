@@ -80,10 +80,6 @@ sudo cp .local/share/X11/xkb/symbols/wasd /usr/share/X11/xkb/symbols/
 paru --noconfirm -S acpilight
 sudo usermod -aG video $USER
 
-# Battery charging thresholds
-sudo cp .local/share/dotfiles/charge-thresholds.s* /etc/systemd/system/
-sudo systemctl enable charge-thresholds
-
 # Clean bash stuff
 rm -r .bash*
 

@@ -1,2 +1,5 @@
 .ssh/*.key
 .config/exercism/user.json
+.config/aws/credentials
+.local/share/gnupg/private-keys-v1.d/*
+.local/share/gnupg/openpgp-revocs.d/*

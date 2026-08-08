@@ -131,6 +131,3 @@ the following packages are required for Qt to match Gtk2 style:
 
 ## Redshift
 - `gammastep` applied via sway config
-
-## Custom script (executed via systemd service) to set battery charging thresholds.
-Verify by `cat /sys/class/power_supply/BAT0/charge_control_{start,end}_threshold`
