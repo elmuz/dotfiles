@@ -198,11 +198,12 @@ This document assesses the current backup/recovery setup and outlines a strategy
 - [x] Kept superseded **configs tracked** (alacritty, sway, gammastep, rofi, etc.) — lightweight, possible return
 - [x] PyCharm/zed/aws-cli-v2/nebula-sync → manual one-offs, NOT in list; PyCharm has online-synced profile
 
-### Phase 2: Capture dotfiles
-- [ ] `yadm add` the §2.4 tracked list
-- [ ] Add `~/.config/niri/wallpaper.sh`
-- [ ] Extend `.config/yadm/encrypt` with `.local/share/gnupg/` (GPG keys) + `aws/credentials`
-- [ ] Document the **"do not back up by design"** list (Mozilla, caches) in INSTALL.md
+### Phase 2: Capture dotfiles (DONE ✅)
+- [x] Tracked: qt6ct.conf, nwg-look/config, qalc.cfg + qalculate-gtk.cfg, neofetch/config.conf, swayimg/init.lua, Thunar/uca.xml, niri/wallpaper.sh, kde.org/ghostwriter.conf, pavucontrol.ini
+- [x] Excluded volatile/auto-generated: qalc.history, Thunar/accels.scm, empty colors/qss dirs, git/config (test identity)
+- [x] Encrypt list already extended in Phase 0 (GPG keys, revocs, aws/credentials)
+- [x] "Do not back up by design" documented in INSTALL.md (Mozilla, PyCharm, caches, bulk data, fprint, Bitwarden)
+- [x] Kept superseded configs tracked (sway, gammastep, redshift, rofi, xbindkeys, alacritty, lf, mc) at user's request
 
 ### Phase 3: System-setup script
 - [ ] `system-setup.sh`: ALHP repos, makepkg flags, keyboard layout, snapper timers, power-profiles, user groups, locale, iwd, fwupd
