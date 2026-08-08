@@ -188,13 +188,15 @@ This document assesses the current backup/recovery setup and outlines a strategy
 - [x] Clean `gnome-keyring` line from portal config
 - [x] Remove `fuzzel-rbw` from pkglist (wasn't in any list — noted only)
 
-### Phase 1: Curated package list (review as you go)
-- [ ] Start from the essential list: `niri waybar kitty mako fuzzel aww brightnessctl wl-gammarelay-rs swaylock grim slurp xwayland-satellite pipewire wireplumber`
-- [ ] Add shell/editor: `zsh oh-my-zsh neovim git tmux`
-- [ ] Add system: `snapper btrfs-progs fwupd power-profiles-daemon bluez`
-- [ ] Add anything installed+configured you actually use
-- [ ] **Drop** Sway/Hyprland/i3/xorg-era packages, `fuzzel-rbw`, `gammastep` (waybar uses wl-gammarelay-rs)
-- [ ] Keep the list in yadm (`~/.config/pkgs/pkglist.txt`)
+### Phase 1: Curated package list (DONE ✅ — 122 pkgs in `~/.config/pkgs/pkglist.txt`)
+- [x] Canonical list promoted to `~/.config/pkgs/pkglist.txt` (tracked by yadm)
+- [x] INSTALL.sh now installs from `$XDG_CONFIG_HOME/pkgs/pkglist.txt`
+- [x] Deleted stale lists: `pkglist.txt.new`, dotfiles `pkglist{,-intel,-amd}.txt`
+- [x] Dropped: sway stack (kept swaylock), gammastep/redshift, rofi, xbindkeys, feh, i3-wm, fuzzel-rbw, alacritty, uwsm, lf, mc, xorg-xinit/xorg-host
+- [x] Dropped unused apps: chromium, code, monero-gui, gnome-klotski, love (simple `pacman -S` if ever needed)
+- [x] Excluded: texlive-fonts* (rare), flatpak (no apps)
+- [x] Kept superseded **configs tracked** (alacritty, sway, gammastep, rofi, etc.) — lightweight, possible return
+- [x] PyCharm/zed/aws-cli-v2/nebula-sync → manual one-offs, NOT in list; PyCharm has online-synced profile
 
 ### Phase 2: Capture dotfiles
 - [ ] `yadm add` the §2.4 tracked list
@@ -270,9 +272,12 @@ cp ~/projects/xkcd-viewer/target/release/xkcd-viewer ~/.local/bin/
 ### 7.3 Tool-Decision Log (living document)
 Keep a short log in INSTALL.md of what to recreate vs skip, so DR stays honest:
 - **Recreate from GitHub:** xkcd-viewer (cargo build)
-- **Skip (manual one-off):** pycharm, aws-cli-v2, zed, zedless, nebula-sync
+- **Skip (manual one-off, simple setup):** zed, aws-cli-v2, nebula-sync
+- **PyCharm:** online-synced profile; NOT recreated; planned to be abandoned for Vim/FOSS IDE
+- **Superseded (pkg dropped, config kept tracked):** sway*, gammastep/redshift, rofi, xbindkeys, feh, i3-wm, fuzzel-rbw, alacritty, uwsm, lf, mc
+- **Unused apps (drop, `pacman -S` if ever needed):** chromium, code, monero-gui, gnome-klotski, love, texlive-fonts*
 - **Evaluate (self-built):** wbg (only used by legacy wallpaper.sh)
-- **Remote-restore:** Firefox (Mozilla sync), Bitwarden (self-hosted)
+- **Remote-restore:** Firefox (Mozilla sync), Bitwarden (self-hosted, out of DR scope)
 - **Re-enroll by hand:** fingerprint (fprintd)
 
 ---
