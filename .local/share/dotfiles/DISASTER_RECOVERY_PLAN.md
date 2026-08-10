@@ -234,7 +234,7 @@ This document assesses the current backup/recovery setup and outlines a strategy
 - [ ] Ensure `~/Documents/last-will`, `~/tools/resume` git repos are pushed
 
 ### Phase 6: DR testing + living document
-- [ ] Quarterly test from ISO in a VM/spare disk
+- [ ] Quarterly test from ISO in a VM/spare disk — see **`DR_TEST_VM.md`** for the full libvirt/UEFI setup
 - [ ] Maintain a **tool-decision log** (see §7.3) so future-you knows what to recreate vs skip
 - [ ] After every major config change: `yadm add` + commit immediately
 
