@@ -237,6 +237,14 @@ This document assesses the current backup/recovery setup and outlines a strategy
 - [ ] Maintain a **tool-decision log** (see §7.3) so future-you knows what to recreate vs skip
 - [ ] After every major config change: `yadm add` + commit immediately
 
+### Backlog — `restore-from-backup.sh` pending fixes (reviewed 2026-08-10)
+- [ ] **BUG:** default snapshot picks the OLDEST daily (`sort | tail -1` → should be `head -1`; also add numeric/version sort + `weekly.0` fallback)
+- [ ] **Design gap:** "GitHub wins on .config" not actually applied — add `yadm reset --hard` after rsync so tracked files reset to HEAD while untracked data stays; fix the misleading "yadm status clean" hint
+- [ ] **Risk:** layout assumption `$SNAP/home/$USER` (rsnapshot `--relative`) is untested — auto-detect (`$SNAP/$USER` fallback) and validate in Phase 6
+- [ ] Add early `mountpoint -q /mnt` check with a clear message
+- [ ] Comment the intentional absence of `--delete`; note the `.mozilla`/account-sync tradeoff and the `xkcd-viewer` binary duplication
+- [ ] If `/etc` fallback is ever enabled, include keyboard layout, not just pacman/makepkg
+
 ---
 
 ## 6. Master Restore Script Blueprint
