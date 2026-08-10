@@ -120,7 +120,7 @@ This document assesses the current backup/recovery setup and outlines a strategy
 | `~/Pictures/wallpaper_C.jpg` | Low priority; optional small backup |
 | `~/tools/xkcd-viewer` | **Rebuild from GitHub** (`elmuz/xkcd-viewer`), don't back up binary |
 | `~/tools/wbg` | Self-built; only used by legacy wallpaper.sh → evaluate/delete |
-| `~/tools/pycharm`, `aws-cli-v2`, `zed`, `zedless`, `nebula-sync` | **Do NOT recreate** in DR — one-off manual installs |
+| `~/tools/pycharm`, `aws-cli-v2`, `zed`, `zedless` | **Do NOT recreate** in DR — one-off manual installs |
 | `~/Documents/last-will`, `~/tools/resume` | Separate git repos |
 | `~/Videos ~/Music ~/Downloads` | Bulk data → external HDD (rsnapshot) |
 
@@ -196,7 +196,7 @@ This document assesses the current backup/recovery setup and outlines a strategy
 - [x] Dropped unused apps: chromium, code, monero-gui, gnome-klotski, love (simple `pacman -S` if ever needed)
 - [x] Excluded: texlive-fonts* (rare), flatpak (no apps)
 - [x] Kept superseded **configs tracked** (alacritty, sway, gammastep, rofi, etc.) — lightweight, possible return
-- [x] PyCharm/zed/aws-cli-v2/nebula-sync → manual one-offs, NOT in list; PyCharm has online-synced profile
+- [x] PyCharm/zed/aws-cli-v2 → manual one-offs, NOT in list; PyCharm has online-synced profile
 
 ### Phase 2: Capture dotfiles (DONE ✅)
 - [x] Tracked: qt6ct.conf, nwg-look/config, qalc.cfg + qalculate-gtk.cfg, neofetch/config.conf, swayimg/init.lua, Thunar/uca.xml, niri/wallpaper.sh, kde.org/ghostwriter.conf, pavucontrol.ini
@@ -297,7 +297,7 @@ cp ~/projects/xkcd-viewer/target/release/xkcd-viewer ~/.local/bin/
 ### 7.3 Tool-Decision Log (living document)
 Keep a short log in INSTALL.md of what to recreate vs skip, so DR stays honest:
 - **Recreate from GitHub:** xkcd-viewer (cargo build)
-- **Skip (manual one-off, simple setup):** zed, aws-cli-v2, nebula-sync
+- **Skip (manual one-off, simple setup):** zed, aws-cli-v2
 - **PyCharm:** online-synced profile; NOT recreated; planned to be abandoned for Vim/FOSS IDE
 - **Superseded (pkg dropped, config kept tracked):** sway*, gammastep/redshift, rofi, xbindkeys, feh, i3-wm, fuzzel-rbw, alacritty, uwsm, lf, mc
 - **Unused apps (drop, `pacman -S` if ever needed):** chromium, code, monero-gui, gnome-klotski, love, texlive-fonts*

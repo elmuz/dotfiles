@@ -127,7 +127,7 @@ These are intentionally excluded from the DR procedure — they are lightweight 
 - **PyCharm** → IDE profile synced online; not recreated (planned to move to Vim/FOSS IDE).
 - **Caches** (`~/.cache/awww`, etc.) → volatile; wallpaper re-set via `awww img ~/Pictures/wallpaper_C.jpg`.
 - **Bulk data** (`~/Videos ~/Music ~/Downloads`) → external HDD backup (rsnapshot).
-- **Manual one-off tools** (zed, aws-cli-v2, nebula-sync) → simple setup, not packaged.
+- **Manual one-off tools** (zed, aws-cli-v2) → simple setup, not packaged.
 - **Fingerprint** (`fprintd`) → biometric, cannot be duplicated; re-enroll by hand.
 - **Identity / logins** → Bitwarden (self-hosted; external server, out of laptop DR scope).
 - **Auto-generated config noise** (window sizes, `qalc.history`, Thunar `accels.scm`) → not tracked.

@@ -174,5 +174,5 @@ rust
 ## --- apps no longer used (simple `pacman -S` if ever needed) ---
 # chromium, code, monero-gui, gnome-klotski, love, texlive-fonts*
 ## --- one-off manual installs (NOT recreated; simple setup instead) ---
-# zed, aws-cli-v2, nebula-sync
+# zed, aws-cli-v2
 # pycharm -> online-synced profile; planned to be abandoned for Vim/FOSS IDE
