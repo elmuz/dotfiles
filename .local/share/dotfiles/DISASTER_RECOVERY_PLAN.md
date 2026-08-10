@@ -218,11 +218,12 @@ This document assesses the current backup/recovery setup and outlines a strategy
 - [x] **No** charge-thresholds step (BIOS handles it)
 - [x] Idempotent, POSIX sh, validated with `sh -n`
 
-### Phase 4: Rewrite INSTALL.sh / INSTALL.md
-- [ ] Modular master script (base → packages → dotfiles → system → themes → shell → services → decrypt)
-- [ ] Add **xkcd-viewer build step**: `git clone git@github.com:elmuz/xkcd-viewer && cargo build --release && cp target/release/xkcd-viewer ~/.local/bin/`
-- [ ] Add post-install checklist: fingerprint re-enroll, Bitwarden login, Firefox account sync, wallpaper set (`awww img ~/Pictures/wallpaper_C.jpg`)
-- [ ] Update docs to niri stack; remove Sway/Hyprland references
+### Phase 4: Rewrite INSTALL.sh / INSTALL.md (DONE ✅)
+- [x] INSTALL.sh rewritten for the niri stack: yadm → paru → curated pkglist → **system-setup.sh** → Nordic themes/cursors → zsh → nvim → **xkcd-viewer build**
+- [x] Removed stale bits: acpilight, keyboard/group duplication (now in system-setup.sh), `source zshenv` (XDG vars set directly), bash-isms
+- [x] xkcd-viewer cloned via HTTPS (public repo) + `cargo build --release`; added `rust` to pkglist
+- [x] INSTALL.md rewritten: niri, post-install checklist, system-setup reference, Firefox/awww/wallpaper notes; removed Sway/Intel/redshift/old ALHP sections
+- [x] Both validated with `sh -n`
 
 ### Phase 5: Backup strategy + full-snapshot restore (DONE ✅)
 - [x] rsnapshot backs up `/home`, `/etc`, `/usr/local` → `/mnt/backups/arya/` (7 daily + 4 weekly + 12 monthly)

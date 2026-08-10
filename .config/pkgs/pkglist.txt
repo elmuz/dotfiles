@@ -125,7 +125,6 @@ freecad
 openscad
 xournalpp
 betterbird-bin
-qwen-code
 pi-coding-agent
 pavucontrol
 
@@ -152,6 +151,7 @@ prettier
 python-passlib
 python-gobject
 perl-image-exiftool
+rust
 
 ## ============================================================
 ## SUGGESTED REMOVALS (do NOT reinstall in DR)
