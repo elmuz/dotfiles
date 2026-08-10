@@ -205,9 +205,18 @@ This document assesses the current backup/recovery setup and outlines a strategy
 - [x] "Do not back up by design" documented in INSTALL.md (Mozilla, PyCharm, caches, bulk data, fprint, Bitwarden)
 - [x] Kept superseded configs tracked (sway, gammastep, redshift, rofi, xbindkeys, alacritty, lf, mc) at user's request
 
-### Phase 3: System-setup script
-- [ ] `system-setup.sh`: ALHP repos, makepkg flags, keyboard layout, snapper timers, power-profiles, user groups, locale, iwd, fwupd
-- [ ] **No** charge-thresholds step (BIOS handles it)
+### Phase 3: System-setup script (DONE ✅ — `~/.local/share/dotfiles/system-setup.sh`)
+- [x] ALHP x86-64-v4 repos (support probe, key import, idempotent pacman.conf edit, `-Syy`)
+- [x] makepkg.conf: `-march=native` CFLAGS/CXXFLAGS + native RUSTFLAGS
+- [x] Keyboard layout: install `wasd` → `/usr/share/X11/xkb/symbols/`
+- [x] Snapper: create root+home configs, enable timeline & cleanup timers
+- [x] power-profiles-daemon enable
+- [x] User groups: wheel + video
+- [x] Locale: en_US.UTF-8 + locale-gen + locale.conf
+- [x] iwd main.conf + enable systemd-resolved/iwd
+- [x] fwupd-refresh.timer
+- [x] **No** charge-thresholds step (BIOS handles it)
+- [x] Idempotent, POSIX sh, validated with `sh -n`
 
 ### Phase 4: Rewrite INSTALL.sh / INSTALL.md
 - [ ] Modular master script (base → packages → dotfiles → system → themes → shell → services → decrypt)

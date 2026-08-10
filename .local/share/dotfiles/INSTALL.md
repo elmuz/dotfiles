@@ -49,6 +49,14 @@ yadm decrypt
 The above command will ask for a password and will restore any file contained in `.local/share/yadm/archive`.
 The variable `$GNUPGHOME` is defined during `INSTALL.sh` script.
 
+### System-level configuration (Phase 3)
+`INSTALL.sh` handles user-space setup. The `/etc`-level changes are automated by a separate idempotent script:
+```shell
+~/.local/share/dotfiles/system-setup.sh
+# or: curl -sSL https://raw.githubusercontent.com/elmuz/dotfiles/main/.local/share/dotfiles/system-setup.sh | sh
+```
+It configures ALHP repos, `makepkg.conf`, the `wasd` keyboard layout, snapper, power-profiles, user groups, locale, iwd and fwupd. Battery charge thresholds are **not** set — the Framework AMD 7040 handles them in BIOS.
+
 ## Optimized repositories
 If your system is somewhat recent, you can enable [ALHP](https://somegit.dev/ALHP/ALHP.GO) optimized repository.
 
