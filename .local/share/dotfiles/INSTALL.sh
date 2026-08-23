@@ -60,7 +60,8 @@ git clone https://aur.archlinux.org/paru.git "$HOME/tools/paru"
 
 # --- 5. Curated packages -----------------------------------------------
 info "installing curated packages"
-paru -S --needed --noconfirm - < "$XDG_CONFIG_HOME/pkgs/pkglist.txt"
+grep -vE '^\s*#|^\s*$' "$XDG_CONFIG_HOME/pkgs/pkglist.txt" \
+    | paru -S --needed --noconfirm -
 
 # --- 6. System-level configuration (/etc) ------------------------------
 info "system-level configuration (system-setup.sh)"
