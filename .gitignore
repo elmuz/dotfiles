@@ -1,0 +1,6 @@
+# ---- GnuPG homedir: only the plaintext-safe config files are tracked ----
+# Secret key material, keyring and sshcontrol live exclusively in the
+# encrypted archive (yadm encrypt). Never track private-keys-v1.d here.
+.local/share/gnupg/*
+!.local/share/gnupg/gpg.conf
+!.local/share/gnupg/gpg-agent.conf

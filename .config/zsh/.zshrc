@@ -105,7 +105,6 @@ alias nord='print -P "┌──────────────┐\n│ %F{#
 
 alias update="paru -Syu"
 alias uninstall="paru -Rs"
-# SSH agent
-SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+# SSH agent = gpg-agent (see ~/.config/zsh/.zshenv)
 
 . "$HOME/.local/share/../bin/env"

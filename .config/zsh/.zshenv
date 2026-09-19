@@ -60,3 +60,8 @@ export TERM="alacritty"
 export BROWSER="firefox"
 export EDITOR="nvim"
 export VISUAL="nvim"
+
+# SSH: gpg-agent acts as the ssh-agent (set by gpgconf, only if unset)
+export SSH_AUTH_SOCK="${SSH_AUTH_SOCK:-$(gpgconf --list-dirs agent-ssh-socket 2>/dev/null)}"
+# Terminal pinentry fallback when no graphical session (e.g. over ssh)
+[[ -t 0 ]] && export GPG_TTY="$(tty)"

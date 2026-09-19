@@ -1,5 +1,16 @@
+# yadm encrypt patterns — paths bundled into the gpg-encrypted archive
+# (output: ~/.local/share/yadm/archive, committed to the git repo).
+# NOTE: repo is PUBLIC → everything listed here MUST stay passphrase-protected.
+
+# OpenSSH private keys (per-server; retired as gpg auth subkeys replace them)
 .ssh/*.key
+
+# Tool credentials
 .config/exercism/user.json
 .config/aws/credentials
-.local/share/gnupg/private-keys-v1.d/*
-.local/share/gnupg/openpgp-revocs.d/*
+
+# GnuPG
+.local/share/gnupg/private-keys-v1.d/*   # secret key material (key-passphrase protected)
+.local/share/gnupg/pubring.kbx           # public keyring (required alongside secrets)
+.local/share/gnupg/openpgp-revocs.d/*    # revocation certificates
+.local/share/gnupg/sshcontrol            # ssh keygrip allow-list (non-secret)
