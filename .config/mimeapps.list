@@ -14,6 +14,7 @@ image/jpeg=swayimg.desktop
 video/matroska=mpv.desktop
 video/x-matroska=mpv.desktop
 x-scheme-handler/jetbrains=jetbrainsd.desktop
+application/msword=chromium.desktop
 
 [Added Associations]
 x-scheme-handler/http=firefox.desktop;
@@ -27,3 +28,4 @@ application/xhtml+xml=firefox.desktop;
 application/x-extension-xhtml=firefox.desktop;
 application/x-extension-xht=firefox.desktop;
 video/mp4=mpv.desktop;
+application/msword=chromium.desktop;

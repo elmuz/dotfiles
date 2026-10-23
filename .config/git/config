@@ -1,0 +1,12 @@
+[user]
+	email = alessio.elmi@gmail.com
+	name = elmuz
+	signingkey = C1A29A75A02E1E74464CA02EA01C523925C94DB0
+[gpg]
+	format = openpgp
+[commit]
+	gpgsign = true
+[tag]
+	gpgsign = true
+[log]
+	showSignature = true
