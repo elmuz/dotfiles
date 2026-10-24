@@ -4,3 +4,11 @@
 .local/share/gnupg/*
 !.local/share/gnupg/gpg.conf
 !.local/share/gnupg/gpg-agent.conf
+
+# ---- Pi agent dir: only portable, non-secret config ----
+.pi/agent/sessions/
+.pi/agent/bin/
+.pi/agent/auth.json
+.pi/agent/models-store.json
+.pi/agent/trust.json
+.pi/agent/mcp-auth.json
